@@ -279,6 +279,20 @@ Set `commit_docs: false` so planning docs stay local and are not committed to an
 3. **Independent commits:** Each sub-repo receives its own atomic commit via `gsd-tools.cjs commit-to-subrepo`. File paths are made relative to the sub-repo root before staging.
 4. **Planning stays local:** The `.planning/` directory is not committed; it acts as cross-repo coordination.
 
+### Status and Reporting Semantics
+
+Sub-repos, gitlinks, and submodules are first-class project modules. A root-level status report must not describe module-local state as root dirt.
+
+Use module-aware root checks when deciding whether the root is clean:
+
+```bash
+git status --porcelain=v1 --ignore-submodules=dirty
+git status --short --ignore-submodules=dirty
+git diff --quiet --ignore-submodules=dirty HEAD
+```
+
+If a phase targets a sub-repo, inspect that module from inside its own repo and report it as module-local worktree state. Avoid using root `git status --short` as a blocker or routing signal in multi-repo workspaces.
+
 ### Commit Routing
 
 Instead of the standard `commit` command, use `commit-to-subrepo` when `sub_repos` is configured:

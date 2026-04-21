@@ -200,11 +200,11 @@ Store the response as REVERT_REASON. Continue to execute_revert.
 <step name="execute_revert">
 **HARD CONSTRAINT: Use git revert --no-commit. NEVER use git reset (except for conflict cleanup as documented below).**
 
-**Dirty-tree guard (run first, before any revert):**
+**Root local-change guard (run first, before any revert):**
 
-Run `git status --porcelain`. If the output is non-empty, display the dirty files and abort:
+Run `git status --porcelain=v1 --ignore-submodules=dirty`. If the output is non-empty, display the root-level files and abort:
 ```
-Working tree has uncommitted changes. Commit or stash them before running $gsd-undo.
+Root working tree has uncommitted changes. Commit or stash them before running $gsd-undo.
 ```
 Exit immediately — do not proceed to any revert operations.
 
@@ -303,7 +303,7 @@ $gsd-progress
 - [ ] --phase mode falls back to git log if manifest entry missing
 - [ ] Dependency check warns when downstream phases have started (MODE=phase)
 - [ ] Dependency check warns when later plans reference target plan outputs (MODE=plan)
-- [ ] Dirty-tree guard aborts if working tree has uncommitted changes
+- [ ] Root local-change guard aborts if working tree has uncommitted changes
 - [ ] Confirmation gate shown before any revert execution
 - [ ] Reverts use git revert --no-commit in reverse chronological order
 - [ ] Single commit created after all reverts staged

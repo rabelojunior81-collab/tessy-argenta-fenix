@@ -19,6 +19,8 @@ if [[ "$INIT" == @file:* ]]; then INIT=$(cat "${INIT#@file:}"); fi
 
 Parse JSON for: `workspace_name`, `workspace_path`, `has_manifest`, `strategy`, `repos`, `repo_count`, `dirty_repos`, `has_dirty_repos`.
 
+Treat `dirty_repos` as the SDK's internal field name for repos with local changes. User-facing messages should say "repos with uncommitted changes" or "module-local worktree state".
+
 **If no workspace name provided:**
 
 First run `$gsd-list-workspaces` to show available workspaces, then ask:

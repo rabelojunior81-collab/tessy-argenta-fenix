@@ -52,7 +52,13 @@
 
 - `gsd-extract_learnings` cannot complete until phase summary/verification/UAT artifacts exist.
 - `STATE.md` still needs a formal transition if we want project status to match the implemented work.
-- No commits were made during this session, so the branch is still a dirty working tree.
+- No commits were made during this session, so the root still had uncommitted work at report time.
+
+### Post-report reconciliation (2026-04-21)
+
+This report was generated before the Phase 1 reconciliation commits. The listed blockers were superseded by `docs(phase-01): reconcile verification state` and `docs(phase-01): verify nyquist validation`.
+
+For the exossistema root, use module-aware status checks such as `git status --porcelain=v1 --ignore-submodules=dirty`. The L1 module repositories are part of the project topology and should not be described as root-level dirty work.
 
 ## Estimated Resource Usage
 

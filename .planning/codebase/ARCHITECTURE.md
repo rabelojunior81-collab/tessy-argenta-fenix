@@ -7,7 +7,8 @@
 **Overall:** Brownfield multi-repo portfolio workspace with a shared operational control plane
 
 **Key Characteristics:**
-- `E:\tessy-argenta-fenix` is a workspace aggregator, not a single deployable application and not a root git repository.
+- `E:\tessy-argenta-fenix` is a root operational superproject/metarepo for the exossistema, not a single deployable application.
+- The L1 module directories are first-class repositories tracked from the root as gitlinks/subrepos; module-local state must be interpreted in the module context, not as root-level source dirt.
 - Product, platform, methodology, governance, and operations are separated into sibling top-level directories instead of one monolith.
 - Cross-repo coordination happens through files, workflows, and operator decisions, not through direct imports across sibling repositories at the workspace root.
 - GSD is installed as a transversal operations layer across multiple assistant runtimes in `.claude/`, `.codex/`, `.gemini/`, `.opencode/`, `.kilo/`, and `.github/`.

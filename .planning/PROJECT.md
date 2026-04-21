@@ -52,6 +52,7 @@ Transformar uma inteligência ecossistemica forte em operação modular sustent�
 - Tessy → Inception: experiência viva gera/abstrai plataforma
 - _claude → todos: governança e memória
 - GSD → todos: instrumentação operacional
+- Root → módulos L1: o root é superprojeto/metarepo operacional; `tessy-antigravity-rabelus-lab`, `inception-v2` e `inception-tui` são módulos/repositórios de primeira classe, não "sujeira" do workspace.
 
 ### Diagnóstico Central
 
@@ -74,10 +75,11 @@ Transformar uma inteligência ecossistemica forte em operação modular sustent�
 
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
-| Root tratado como metaprojeto de exossistema | Portfolio multi-repo não é app único | — Pending |
-| Tessy como módulo prioritário | Flagship = chão operacional do valor | — Pending |
-| GSD como camada operacional transversal | Padronizar sem substituir método | — Pending |
-| Codebase map existe em .planning/codebase/ | Base para inferir Validated requirements | — Pending |
+| Root tratado como metaprojeto de exossistema | Portfolio multi-repo não é app único | — Accepted 2026-04-20 |
+| Tessy como módulo prioritário | Flagship = chão operacional do valor | — Accepted 2026-04-20 |
+| GSD como camada operacional transversal | Padronizar sem substituir método | — Accepted 2026-04-20 |
+| Codebase map existe em .planning/codebase/ | Base para inferir Validated requirements | — Accepted 2026-04-20 |
+| Subrepos L1 tratados como módulos do exossistema | O estado local de um módulo não deve ser confundido com sujeira do root | — Accepted 2026-04-21 |
 
 ## Evolution
 
@@ -97,4 +99,4 @@ Este documento evolve at phase transitions e milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-20 after initialization from brainstorm-exossistema-rabelus.md and .planning/codebase/ARCHITECTURE.md*
+*Last updated: 2026-04-21 after Phase 1 reconciliation and subrepo semantics correction*

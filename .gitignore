@@ -1,0 +1,3 @@
+.planning/.lock
+.planning/*.lock
+.planning/*.tmp.*

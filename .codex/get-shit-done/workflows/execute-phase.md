@@ -293,10 +293,10 @@ CROSS_AI_TIMEOUT=$(gsd-sdk query config-get workflow.cross_ai_timeout 2>/dev/nul
    - Append PROJECT.md context (project name, description, tech stack)
    - Format as a self-contained execution prompt
 
-2. **Check for dirty working tree before execution:**
+2. **Check for root-level local changes before execution:**
    ```bash
-   if ! git diff --quiet HEAD 2>/dev/null; then
-     echo "WARNING: dirty working tree detected — the external AI command may produce uncommitted changes that conflict with existing modifications"
+   if ! git diff --quiet --ignore-submodules=dirty HEAD 2>/dev/null; then
+     echo "WARNING: root-level local changes detected — the external AI command may produce uncommitted changes that conflict with existing modifications"
    fi
    ```
 

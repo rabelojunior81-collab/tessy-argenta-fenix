@@ -2,6 +2,7 @@
 
 **Project:** Exossistema Rabelus
 **Generated:** 2026-04-20
+**Updated:** 2026-04-21
 
 ---
 
@@ -54,7 +55,13 @@
 - GSD (operational layer)
 
 **Total Phases:** 17
-**Current Phase:** 0 (GSD Setup)
+**Current Phase:** 2 (Tessy State)
+
+### Git Topology Rule
+
+The root `E:\tessy-argenta-fenix` is an operational superproject/metarepo for the exossistema. The configured `planning.sub_repos` modules (`tessy-antigravity-rabelus-lab`, `inception-v2`, `inception-tui`) are first-class L1 module repositories.
+
+For root health checks, use `git status --porcelain=v1 --ignore-submodules=dirty`. Do not treat module-local state or gitlink movement as root-level uncommitted source work. Inspect a module from inside its own repo only when the active phase targets that module.
 
 ---
 
@@ -72,8 +79,8 @@
 
 ## Current Priority
 
-Begin with Phase 1: Tessy Foundation
-- Goal: Monaco editor + xterm.js terminal working together
-- Requirements: TESSY-01 to TESSY-05
+Continue with Phase 2: Tessy State
+- Goal: Application state persists, file explorer works
+- Requirements: TESSY-06 to TESSY-08
 
-Run `/gsd-discuss-phase 1` to start.
+Run `/gsd-plan-phase 2` to plan the next phase.

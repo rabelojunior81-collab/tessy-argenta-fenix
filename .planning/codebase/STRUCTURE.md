@@ -40,6 +40,12 @@
 └── brainstorm-exossistema-rabelus.md # Root framing document for exossistema reading
 ```
 
+## Git Topology
+
+The root workspace is an operational superproject/metarepo. The L1 directories `tessy-antigravity-rabelus-lab/`, `inception-v2/`, and `inception-tui/` are first-class module repositories and are listed in `.planning/config.json` under `planning.sub_repos`.
+
+Root-level health checks should use `git status --porcelain=v1 --ignore-submodules=dirty` or equivalent module-aware commands. Module-local worktree state should be inspected and reported from inside the specific module only when that module is part of the active phase.
+
 ## Directory Purposes
 
 **`tessy-antigravity-rabelus-lab/`:**

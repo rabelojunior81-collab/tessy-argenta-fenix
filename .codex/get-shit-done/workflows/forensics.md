@@ -38,14 +38,15 @@ git log --format="%H %ai %s" -30
 git log --name-only --format="" -20 | sort | uniq -c | sort -rn | head -20
 
 # Uncommitted work
-git status --short
+git status --short --ignore-submodules=dirty
 git diff --stat
 ```
 
 Record:
 - Commit timeline (dates, messages, frequency)
 - Most-edited files (potential stuck-loop indicator)
-- Uncommitted changes (potential crash/interruption indicator)
+- Root-level uncommitted changes (potential crash/interruption indicator)
+- Module-local worktree state separately, only for configured `planning.sub_repos` or modules relevant to the incident
 
 ### 2b. Planning State
 

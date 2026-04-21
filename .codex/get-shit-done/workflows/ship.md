@@ -47,9 +47,10 @@ Verify the work is ready to ship:
 
 2. **Clean working tree?**
    ```bash
-   git status --short
+   git status --short --ignore-submodules=dirty
    ```
-   If uncommitted changes exist: ask user to commit or stash first.
+   If root-level uncommitted changes exist: ask user to commit or stash first.
+   For configured `planning.sub_repos`, gitlinks, or submodules, do not block shipping on module-local state unless the current ship operation explicitly includes that module's own repo diff.
 
 3. **On correct branch?**
    ```bash

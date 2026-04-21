@@ -546,17 +546,19 @@ Emit:
 - ✓ `No blocking operational todos` — if no pending todos or none match operational keywords
 - ⚠ `Blocking operational todos found` — list the file names and matching keywords (max 5)
 
-**Check 6 — Uncommitted code**
+**Check 6 — Root-level uncommitted code**
 
 ```bash
-git status --porcelain 2>/dev/null | grep -v "^??" | grep -v "^.planning\/" | grep -v "^\.\." | head -10
+git status --porcelain=v1 --ignore-submodules=dirty 2>/dev/null | grep -v "^??" | grep -v "^.planning\/" | head -10
 ```
 
-If output is non-empty (modified/staged files outside `.planning/`), flag as uncommitted code.
+If output is non-empty (modified/staged root files outside `.planning/`), flag as root-level uncommitted code.
+
+For workspaces configured with `planning.sub_repos`, gitlinks, or submodules, module-local state is not root-level dirt. Those directories are first-class project modules. Inspect a module's own worktree separately only when the current phase targets that module.
 
 Emit:
-- ✓ `Working tree clean` — if no modified files outside `.planning/`
-- ⚠ `Uncommitted changes in source files` — list up to 10 file paths
+- ✓ `Root working tree clean` — if no modified root files outside `.planning/`
+- ⚠ `Root-level uncommitted changes in source files` — list up to 10 file paths
 
 ---
 
@@ -582,7 +584,7 @@ Then for each failed check, add a concrete next action:
 - Check 3 (deferred scope): `Add the missing phases to ROADMAP.md or update the deferred references`
 - Check 4 (memory pending): `Review the flagged memory entries and resolve or clear them`
 - Check 5 (blocking todos): `Complete the operational steps in .planning/todos/pending/ before continuing`
-- Check 6 (uncommitted code): `Commit or stash the uncommitted changes before advancing`
+- Check 6 (root-level uncommitted code): `Commit or stash the root-level uncommitted changes before advancing`
 - Check 1 (STATE inconsistency): `Run $gsd-verify-work ${PHASE} ${GSD_WS} to reconcile state`
 </step>
 
