@@ -1,0 +1,338 @@
+[  105980ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[  107945ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:5173/favicon.ico:0
+[  108653ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  108653ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[  108653ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  108653ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[  108706ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  108706ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[  108717ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  108718ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[  108972ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  108972ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[  109237ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  109237ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[  109659ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  109659ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[  109860ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  109861ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[  110176ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3002/health:0
+[  110216ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  110216ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[  110239ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  110240ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[  110428ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3002/health:0
+[  110811ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  110811ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[  110863ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  110864ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[  111818ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  111818ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[  111833ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[  111834ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[ 1942733ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[ 1944370ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1944370ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[ 1944458ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1944458ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[ 1945138ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1945138ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[ 1946195ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1946195ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[ 1946789ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1946790ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[ 1947226ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1947227ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[ 1947994ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[ 1947995ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[34846055ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[34847103ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34847103ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[34847164ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34847164ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[34847406ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34847406ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[34848008ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34848008ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[34848955ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34848955ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[34849109ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3002/health:0
+[34849287ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34849287ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[34849370ms] [ERROR] Failed to load resource: net::ERR_CONNECTION_REFUSED @ http://127.0.0.1:3002/health:0
+[34850320ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[34850321ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[44518323ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[44520560ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44520560ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[44520925ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44520925ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[44521171ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44521171ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[44522326ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44522326ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[44523012ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44523013ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[44523659ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44523660ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[44524388ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[44524388ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[44717065ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx:325:23)
+    at AppContent (http://localhost:5173/App.tsx:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717065ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717125ms] Error: useWorkspace must be used within a WorkspaceProvider
+    at useWorkspace (http://localhost:5173/contexts/WorkspaceContext.tsx?t=1773161126010:610:11)
+    at ChatProvider (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126007:44:31)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717125ms] [WARNING] %s
+
+%s
+ An error occurred in the <ChatProvider> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717155ms] Error: useWorkspace must be used within a WorkspaceProvider
+    at useWorkspace (http://localhost:5173/contexts/WorkspaceContext.tsx?t=1773161126010:610:11)
+    at ChatProvider (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126007:44:31)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717156ms] [WARNING] %s
+
+%s
+ An error occurred in the <ChatProvider> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717642ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126010:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126010:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717642ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717720ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126010:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126010:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717720ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717885ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126010:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126010:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717885ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717922ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126010:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126010:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717922ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717957ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126010:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126010:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717957ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44717985ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126010:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126010:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44717985ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[44718126ms] Error: useChat must be used within a ChatProvider
+    at useChat (http://localhost:5173/contexts/ChatContext.tsx?t=1773161126594:325:23)
+    at AppContent (http://localhost:5173/App.tsx?t=1773161126594:61:79)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:12408:13)
+[44718126ms] [WARNING] %s
+
+%s
+ An error occurred in the <AppContent> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=a22b0759:6965
+[45564781ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[45572079ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/githubService.ts:0
+[45572361ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/gemini/client.ts:0
+[45572362ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/gemini/service.ts:0
+[45572362ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/workspaceService.ts:0
+[45572362ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/workspaceAIService.ts:0
+[45572363ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/gitService.ts:0
+[45572363ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/brokerClient.ts:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/layout/Sidebar.tsx:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/layout/ViewerPanel.tsx:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/layout/CentralCanvas.tsx:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/layout/RealTerminal.tsx:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/layout/CoPilot.tsx:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/node_modules/.vite/deps/framer-motion.js?v=5eeb617a:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/hooks/useViewer.ts:0
+[45572382ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/viewers/HistoryViewer.tsx:0
+[45572383ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/viewers/LibraryViewer.tsx:0
+[45572383ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/viewers/ProjectsViewer.tsx:0
+[45572383ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/viewers/GitHubViewer.tsx:0
+[45572383ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/components/viewers/FileExplorer.tsx:0
+[45572383ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/authProviders.ts:0
+[45572383ms] [ERROR] Failed to load resource: net::ERR_NETWORK_CHANGED @ http://localhost:5173/services/projectDocService.ts:0
+[45636157ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[45637908ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45637908ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[45638017ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45638018ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[45638296ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45638296ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[45639061ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45639061ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[45639451ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45639451ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[45639980ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45639981ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[45640527ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[45640528ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[46537376ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[46539688ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46539688ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[46539765ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46539765ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[46540024ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46540024ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[46540317ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46540317ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[46540374ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46540374ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[46540436ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46540436ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[46540632ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[46540632ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0
+[47366043ms] Error: useWorkspace must be used within a WorkspaceProvider
+    at useWorkspace (http://localhost:5173/contexts/WorkspaceContext.tsx:610:11)
+    at ChatProvider (http://localhost:5173/contexts/ChatContext.tsx:44:31)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:12408:13)
+[47366043ms] [WARNING] %s
+
+%s
+ An error occurred in the <ChatProvider> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:6965
+[47372795ms] Error: useWorkspace must be used within a WorkspaceProvider
+    at useWorkspace (http://localhost:5173/contexts/WorkspaceContext.tsx?t=1773163774813:610:11)
+    at ChatProvider (http://localhost:5173/contexts/ChatContext.tsx?t=1773163774813:44:31)
+    at Object.react_stack_bottom_frame (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:18509:20)
+    at renderWithHooks (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:5654:24)
+    at updateFunctionComponent (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:7475:21)
+    at beginWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:8525:20)
+    at runWithFiberInDEV (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:997:72)
+    at performUnitOfWork (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:12561:98)
+    at workLoopSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:12424:43)
+    at renderRootSync (http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:12408:13)
+[47372795ms] [WARNING] %s
+
+%s
+ An error occurred in the <ChatProvider> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:5173/node_modules/.vite/deps/react-dom_client.js?v=e97f64f4:6965
+[50159892ms] [WARNING] cdn.tailwindcss.com should not be used in production. To use Tailwind CSS in production, install it as a PostCSS plugin or use the Tailwind CLI: https://tailwindcss.com/docs/installation @ https://cdn.tailwindcss.com/:63
+[50161055ms] [ERROR] Access to fetch at 'https://dexie.org/docs/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50161056ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://dexie.org/docs/:0
+[50161117ms] [ERROR] Access to fetch at 'https://developer.mozilla.org/en-US/docs/Web/API/File_System_API' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50161117ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://developer.mozilla.org/en-US/docs/Web/API/File_System_API:0
+[50161788ms] [ERROR] Access to fetch at 'https://ai.google.dev/gemini-api/docs' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50161788ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://ai.google.dev/gemini-api/docs:0
+[50162398ms] [ERROR] Access to fetch at 'https://modelcontextprotocol.io/docs/getting-started/intro' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50162399ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://modelcontextprotocol.io/docs/getting-started/intro:0
+[50163084ms] [ERROR] Access to fetch at 'https://github.com/microsoft/node-pty' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50163084ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://github.com/microsoft/node-pty:0
+[50163200ms] [ERROR] Access to fetch at 'https://react.dev/reference/react' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50163200ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://react.dev/reference/react:0
+[50164126ms] [ERROR] Access to fetch at 'https://vite.dev/guide/' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource. @ http://localhost:5173/:0
+[50164127ms] [ERROR] Failed to load resource: net::ERR_FAILED @ https://vite.dev/guide/:0

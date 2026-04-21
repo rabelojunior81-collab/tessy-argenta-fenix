@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(wc:*)",
+      "Bash(powershell -command \"Get-Item ''E:/tessy-argenta-fenix/_claude/exploration/tessy-antigravity-rabelus-lab.md'' | Select-Object LastWriteTime; Get-Item ''C:/Users/rabel/.claude/projects/E--tessy-argenta-fenix/memory/MEMORY.md'' | Select-Object LastWriteTime; Get-Date\")",
+      "Bash(powershell -command \"Get-Date -Format ''dd/MM/yyyy HH:mm:ss''\")",
+      "Bash(powershell -command \"Get-TimeZone | Select-Object DisplayName, Id, BaseUtcOffset\")"
+    ]
+  }
+}

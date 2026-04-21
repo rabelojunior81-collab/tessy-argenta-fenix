@@ -1,0 +1,454 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "inception-config",
+  "title": "Inception Methodology Configuration",
+  "description": "Schema de configuração gerado pelo Inception Onboarding TUI. Descreve identidade, projetos, operador, metodologia e restrições.",
+  "version": "1.0.0",
+  "type": "object",
+  "required": ["meta", "agent", "operator", "projects", "methodology"],
+
+  "properties": {
+
+    "meta": {
+      "type": "object",
+      "description": "Metadados do arquivo de configuração",
+      "required": ["inception_version", "generated_at", "generated_by"],
+      "properties": {
+        "inception_version": {
+          "type": "string",
+          "description": "Versão da Inception Methodology usada",
+          "example": "1.0.0"
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp ISO 8601 de geração"
+        },
+        "generated_by": {
+          "type": "string",
+          "description": "Quem/o que gerou (TUI, manual, agente)",
+          "example": "inception-tui v1.0.0"
+        },
+        "last_updated": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "config_version": {
+          "type": "string",
+          "description": "Versão semântica desta configuração específica",
+          "example": "1.0.0"
+        }
+      }
+    },
+
+    "agent": {
+      "type": "object",
+      "description": "Identidade completa do agente",
+      "required": ["name", "nature", "purpose"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nome do agente",
+          "example": "Tessy"
+        },
+        "nature": {
+          "type": "string",
+          "enum": ["ia", "humano", "hibrido", "organizacao", "time"],
+          "description": "Natureza do agente"
+        },
+        "purpose": {
+          "type": "string",
+          "description": "Propósito primário em uma frase",
+          "example": "Hiper-Engenharia Assistida por IA — extensão cognitiva do desenvolvedor"
+        },
+        "aliases": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Outros nomes ou apelidos do agente"
+        },
+        "personality": {
+          "type": "object",
+          "properties": {
+            "tone": {
+              "type": "string",
+              "enum": ["formal", "casual", "tecnico", "criativo", "direto", "exploratorio"],
+              "description": "Tom predominante de comunicação"
+            },
+            "style_notes": {
+              "type": "string",
+              "description": "Notas livres sobre estilo e personalidade"
+            },
+            "language": {
+              "type": "string",
+              "description": "Idioma primário de operação",
+              "example": "pt-BR"
+            }
+          }
+        },
+        "values": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Valores operacionais explícitos",
+          "example": ["transparência operacional", "local-first", "fail forward gracefully"]
+        },
+        "limits": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["limit"],
+            "properties": {
+              "limit": {
+                "type": "string",
+                "description": "O que o agente NÃO faz"
+              },
+              "rationale": {
+                "type": "string",
+                "description": "Por que este limite existe"
+              }
+            }
+          },
+          "description": "Limites explícitos do agente"
+        },
+        "scope_temporal": {
+          "type": "string",
+          "enum": ["unico", "recorrente", "perpetuo"],
+          "description": "Escopo temporal do agente"
+        }
+      }
+    },
+
+    "operator": {
+      "type": "object",
+      "description": "Configuração do operador/orquestrador",
+      "required": ["autonomy_level"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Nome do operador principal"
+        },
+        "role": {
+          "type": "string",
+          "description": "Papel do operador no contexto",
+          "example": "Fundador / PM / Desenvolvedor"
+        },
+        "autonomy_level": {
+          "type": "string",
+          "enum": ["full", "supervised", "gated"],
+          "description": "Nível de autonomia do agente. 'full' = age sozinho; 'supervised' = reporta antes de ações grandes; 'gated' = sempre pede aprovação"
+        },
+        "approval_required_for": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Classes de ação que sempre requerem aprovação explícita",
+          "example": ["deletar dados", "mudanças de schema", "publicações externas"]
+        },
+        "report_frequency": {
+          "type": "string",
+          "enum": ["per-task", "per-mission", "daily", "weekly", "monthly", "on-demand"],
+          "description": "Frequência de reportes ao operador"
+        },
+        "report_format": {
+          "type": "string",
+          "enum": ["markdown", "json", "plain", "structured"],
+          "description": "Formato preferido de comunicação"
+        },
+        "contact": {
+          "type": "string",
+          "description": "Canal preferido de contato"
+        }
+      }
+    },
+
+    "projects": {
+      "type": "array",
+      "description": "Lista de projetos gerenciados por este agente",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "purpose", "status"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Identificador único kebab-case",
+            "pattern": "^[a-z0-9-]+$",
+            "example": "tessy-main"
+          },
+          "name": {
+            "type": "string",
+            "example": "Tessy"
+          },
+          "purpose": {
+            "type": "string",
+            "description": "Propósito específico deste projeto"
+          },
+          "status": {
+            "type": "string",
+            "enum": ["new", "active", "legacy", "archived", "paused"],
+            "description": "Estado atual do projeto"
+          },
+          "priority": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10,
+            "description": "Prioridade relativa (1 = mais alta)"
+          },
+          "scope_in": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "O que está dentro do escopo"
+          },
+          "scope_out": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "O que está explicitamente fora do escopo"
+          },
+          "tech_stack": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Tecnologias principais (opcional — agnóstico)"
+          },
+          "root_path": {
+            "type": "string",
+            "description": "Caminho raiz do projeto no filesystem"
+          },
+          "dependencies": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Dependências de outros projetos"
+          }
+        }
+      }
+    },
+
+    "methodology": {
+      "type": "object",
+      "description": "Configuração dos protocolos Inception aplicados a este contexto",
+      "properties": {
+
+        "active_gates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["G-TS", "G-DI", "G-SEC", "G-UX", "G-REL", "G-AI"]
+          },
+          "description": "Gates padrão Inception ativados para este projeto"
+        },
+
+        "custom_gates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "name", "trigger", "validation"],
+            "properties": {
+              "id": { "type": "string" },
+              "name": { "type": "string" },
+              "trigger": {
+                "type": "string",
+                "description": "Quando este gate é acionado"
+              },
+              "validation": {
+                "type": "string",
+                "description": "O que é verificado"
+              }
+            }
+          },
+          "description": "Gates customizados específicos deste projeto"
+        },
+
+        "technical_statuses": {
+          "type": "array",
+          "items": { "type": "string" },
+          "default": ["RESOLVIDO", "PARCIAL", "STUB", "RISCO_ACEITO", "BLOQUEADO"],
+          "description": "Status técnicos válidos neste contexto"
+        },
+
+        "mission_naming": {
+          "type": "object",
+          "properties": {
+            "sprint_id_pattern": {
+              "type": "string",
+              "description": "Padrão de nomenclatura para sprint IDs",
+              "default": "<descricao-kebab>-<YYYY-MM>"
+            },
+            "branch_pattern": {
+              "type": "string",
+              "description": "Padrão para nomes de branch",
+              "default": "<tipo>/<descricao-curta>"
+            },
+            "commit_pattern": {
+              "type": "string",
+              "description": "Padrão para mensagens de commit",
+              "default": "[<TASK-ID>] <descricao-imperativa>"
+            }
+          }
+        },
+
+        "retro_cadence": {
+          "type": "string",
+          "enum": ["per-mission", "weekly", "biweekly", "monthly", "quarterly"],
+          "description": "Frequência de retrospectivas"
+        },
+
+        "journal_retention": {
+          "type": "string",
+          "enum": ["forever", "3y", "1y", "6m"],
+          "default": "forever",
+          "description": "Política de retenção do journal"
+        },
+
+        "version_strategy": {
+          "type": "string",
+          "enum": ["semver", "calver", "incremental", "custom"],
+          "default": "semver",
+          "description": "Estratégia de versionamento da metodologia"
+        },
+
+        "agent_modes_enabled": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["A-Auditor", "B-Executor", "C-Arquivista", "D-Verificador"]
+          },
+          "default": ["A-Auditor", "B-Executor", "C-Arquivista", "D-Verificador"],
+          "description": "Modos de agente ativados neste contexto"
+        }
+      }
+    },
+
+    "constraints": {
+      "type": "object",
+      "description": "Restrições operacionais do projeto/agente",
+      "properties": {
+        "security": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Restrições de segurança e privacidade",
+          "example": ["tokens em plaintext apenas em dev local", "sem dados de usuário em logs"]
+        },
+        "communication": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Restrições de comunicação e compartilhamento",
+          "example": ["não compartilhar código proprietário externamente"]
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "type": {
+                "type": "string",
+                "enum": ["sistema", "api", "time", "aprovacao", "ferramenta"]
+              },
+              "criticality": {
+                "type": "string",
+                "enum": ["bloqueante", "importante", "opcional"]
+              },
+              "notes": { "type": "string" }
+            }
+          },
+          "description": "Dependências externas que impactam operação"
+        },
+        "environment": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Restrições de ambiente de execução",
+          "example": ["apenas local", "sem acesso a internet em prod"]
+        }
+      }
+    },
+
+    "evolution": {
+      "type": "object",
+      "description": "Configuração dos loops de evolução da metodologia",
+      "properties": {
+        "methodology_version": {
+          "type": "string",
+          "description": "Versão atual desta configuração de metodologia",
+          "example": "1.0.0"
+        },
+        "last_reviewed": {
+          "type": "string",
+          "format": "date"
+        },
+        "next_review": {
+          "type": "string",
+          "format": "date"
+        },
+        "evolution_log": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["date", "version", "change", "rationale"],
+            "properties": {
+              "date": { "type": "string", "format": "date" },
+              "version": { "type": "string" },
+              "change": { "type": "string" },
+              "rationale": { "type": "string" },
+              "operator_approved": { "type": "boolean" }
+            }
+          },
+          "description": "Histórico de mudanças na metodologia deste projeto"
+        }
+      }
+    }
+
+  },
+
+  "examples": [
+    {
+      "meta": {
+        "inception_version": "1.0.0",
+        "generated_at": "2026-03-10T10:00:00Z",
+        "generated_by": "inception-tui v1.0.0",
+        "config_version": "1.0.0"
+      },
+      "agent": {
+        "name": "Tessy",
+        "nature": "ia",
+        "purpose": "Hiper-Engenharia Assistida por IA — extensão cognitiva do desenvolvedor",
+        "personality": {
+          "tone": "tecnico",
+          "style_notes": "Direto, sem excesso de palavras. Técnico mas acessível.",
+          "language": "pt-BR"
+        },
+        "values": ["transparência operacional", "local-first", "fail forward gracefully"],
+        "limits": [
+          { "limit": "Não toma decisões destrutivas sem aprovação", "rationale": "Segurança operacional" }
+        ],
+        "scope_temporal": "perpetuo"
+      },
+      "operator": {
+        "name": "Adilson",
+        "role": "Fundador / PM",
+        "autonomy_level": "supervised",
+        "approval_required_for": ["deletar dados", "mudanças de schema", "publicações externas"],
+        "report_frequency": "per-mission",
+        "report_format": "markdown"
+      },
+      "projects": [
+        {
+          "id": "tessy-antigravity",
+          "name": "Tessy",
+          "purpose": "IDE web local-first com terminal real e pipeline de IA colaborativa",
+          "status": "active",
+          "priority": 1,
+          "scope_in": ["frontend React", "terminal broker", "Gemini pipeline", "file system access"],
+          "scope_out": ["mobile nativo", "multi-tenant", "SaaS cloud"]
+        }
+      ],
+      "methodology": {
+        "active_gates": ["G-TS", "G-DI", "G-SEC", "G-UX", "G-REL", "G-AI"],
+        "retro_cadence": "per-mission",
+        "journal_retention": "forever",
+        "version_strategy": "semver"
+      },
+      "constraints": {
+        "security": ["tokens em plaintext apenas em dev local"],
+        "communication": [],
+        "dependencies": []
+      }
+    }
+  ]
+}
