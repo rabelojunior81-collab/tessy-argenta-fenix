@@ -13,7 +13,7 @@
 | # | Phase | Goal | Requirements | Success Criteria |
 |---|-------|------|--------------|------------------|
 | 0 | GSD Setup | Configure operational layer | GSD-01 to GSD-15 | 5 |
-| 1 | Tessy Foundation | Editor + Terminal base | TESSY-01 to TESSY-05 | 5 |
+| 1 | Tessy Foundation | 5/5 | Complete    | 2026-04-21 |
 | 2 | Tessy State | State management + navigation | TESSY-06 to TESSY-08 | 3 |
 | 3 | Tessy GitHub | GitHub OAuth + repo operations | TESSY-09 to TESSY-12 | 4 |
 | 4 | Tessy AI | Chat + providers + tools | TESSY-13 to TESSY-17 | 5 |
@@ -69,7 +69,7 @@
 4. SPA navigation works without full page reload
 5. 50K+ line file opens without browser crash (web workers enabled)
 
-**Plans:**
+**Plans:** 5/5 complete (2026-04-21)
 1. Integrate Monaco editor component
 2. Integrate xterm.js with node-pty backend
 3. Set terminal buffer limit (configurable, default 10000 lines)

@@ -10,11 +10,11 @@
 ### Tessy - Flagship Product
 
 #### Foundation
-- [ ] **TESSY-01**: User can edit code files with syntax highlighting
-- [ ] **TESSY-02**: User can execute terminal commands in integrated PTY
-- [ ] **TESSY-03**: Terminal supports scrollback with configurable buffer limit
-- [ ] **TESSY-04**: Application loads in browser without page reloads (SPA)
-- [ ] **TESSY-05**: Monaco editor handles files >50K lines without browser crash
+- [x] **TESSY-01**: User can edit code files with syntax highlighting
+- [x] **TESSY-02**: User can execute terminal commands in integrated PTY
+- [x] **TESSY-03**: Terminal supports scrollback with configurable buffer limit
+- [x] **TESSY-04**: Application loads in browser without page reloads (SPA)
+- [x] **TESSY-05**: Monaco editor handles files >50K lines without browser crash
 
 #### State Management
 - [ ] **TESSY-06**: Application state persists across browser sessions
