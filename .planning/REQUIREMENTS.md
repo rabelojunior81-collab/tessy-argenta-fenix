@@ -22,10 +22,10 @@
 - [x] **TESSY-08**: Application displays loading states during async operations
 
 #### GitHub Integration
-- [ ] **TESSY-09**: User can authenticate via GitHub OAuth
-- [ ] **TESSY-10**: OAuth tokens stored in sessionStorage with refresh logic
-- [ ] **TESSY-11**: User can view GitHub repositories and navigate files
-- [ ] **TESSY-12**: Git operations (clone, pull, push) work via terminal
+- [x] **TESSY-09**: User can authenticate via GitHub OAuth
+- [x] **TESSY-10**: OAuth tokens stored in a relaxed app-session model with refresh logic; the rigid `sessionStorage` constraint is not required in Phase 3
+- [x] **TESSY-11**: User can view GitHub repositories and navigate files
+- [x] **TESSY-12**: Git operations (clone, pull, push) work via terminal
 
 #### AI Integration
 - [ ] **TESSY-13**: User can chat with AI models (Claude, Gemini, OpenAI)
@@ -172,7 +172,7 @@
 |-------------|-------|--------|
 | TESSY-01 through TESSY-05 | Phase 1: Foundation | Complete |
 | TESSY-06 through TESSY-08 | Phase 2: State | Complete |
-| TESSY-09 through TESSY-12 | Phase 3: GitHub | Pending |
+| TESSY-09 through TESSY-12 | Phase 3: GitHub | Complete |
 | TESSY-13 through TESSY-17 | Phase 4: AI | Pending |
 | TESSY-18 through TESSY-20 | Phase 5: Workspace | Pending |
 | TESSY-21 through TESSY-23 | Phase 6: Polish | Pending |
@@ -196,4 +196,4 @@
 
 ---
 *Requirements defined: 2026-04-20*
-*Last updated: 2026-04-22 after Phase 2 execution*
+*Last updated: 2026-04-22 after Phase 3 GitHub validation*

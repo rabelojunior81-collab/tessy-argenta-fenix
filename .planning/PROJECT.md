@@ -18,6 +18,7 @@ Transformar uma inteligência ecossistemica forte em operação modular sustent�
 - ✓ GSD como camada operacional transversal — workflows, hooks, agents, templates — existing
 - ✓ _claude como memória institucional e governança — existing
 - ✓ Codebase map existente em .planning/codebase/ — existing
+- ✓ Tessy GitHub como superfície nativa do shell com OAuth primário, PAT fallback, viewer híbrido e worktree host-side — validated in Phase 3
 
 ### Active
 
@@ -80,6 +81,7 @@ Transformar uma inteligência ecossistemica forte em operação modular sustent�
 | GSD como camada operacional transversal | Padronizar sem substituir método | — Accepted 2026-04-20 |
 | Codebase map existe em .planning/codebase/ | Base para inferir Validated requirements | — Accepted 2026-04-20 |
 | Subrepos L1 tratados como módulos do exossistema | O estado local de um módulo não deve ser confundido com sujeira do root | — Accepted 2026-04-21 |
+| Tessy GitHub entrou como superfície nativa com viewer híbrido, YOLO persistido e worktree host-side | Phase 3 consolidou o fluxo GitHub dentro do shell | — Accepted 2026-04-22 |
 
 ## Evolution
 
@@ -99,4 +101,4 @@ Este documento evolve at phase transitions e milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-21 after Phase 1 reconciliation and subrepo semantics correction*
+*Last updated: 2026-04-22 after Phase 3 GitHub validation and tracking closure*

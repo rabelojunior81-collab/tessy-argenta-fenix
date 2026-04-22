@@ -15,7 +15,7 @@
 | 0 | GSD Setup | Configure operational layer | GSD-01 to GSD-15 | 5 |
 | 1 | Tessy Foundation | Monaco editor + xterm.js terminal working together | TESSY-01 to TESSY-05 | Complete (5/5, 2026-04-21) |
 | 2 | Tessy State | Application state persists, file explorer works | TESSY-06 to TESSY-08 | Complete (3/3, 2026-04-22) |
-| 3 | Tessy GitHub | GitHub OAuth + repo operations | TESSY-09 to TESSY-12 | 4 |
+| 3 | Tessy GitHub | Native GitHub viewer with guided/direct actions and host-side worktree support | TESSY-09 to TESSY-12 | Complete (5/5, 2026-04-22) |
 | 4 | Tessy AI | Chat + providers + tools | TESSY-13 to TESSY-17 | 5 |
 | 5 | Tessy Workspace | Local filesystem + offline | TESSY-18 to TESSY-20 | 3 |
 | 6 | Tessy Polish | Errors + observability | TESSY-21 to TESSY-23 | 3 |
@@ -98,21 +98,24 @@
 
 ### Phase 3: Tessy GitHub
 
-**Goal:** GitHub OAuth + repository browsing + git operations
+**Goal:** Native GitHub viewer with hybrid repo browsing, guided/direct actions, and host-side worktree support
 
 **Requirements:** TESSY-09, TESSY-10, TESSY-11, TESSY-12
 
 **Success Criteria:**
-1. "Connect GitHub" button → OAuth flow → token stored in sessionStorage
-2. Repositories listed, files browsed via GitHub API
-3. git clone/pull/push work via terminal
-4. Token refresh handled automatically
+1. "Connect GitHub" works with OAuth as the primary path and PAT fallback when needed
+2. Token/session handling follows the relaxed app-session model, with the rigid sessionStorage constraint explicitly relaxed for this phase
+3. Repositories are browsed through a hybrid tree + search experience, with project override clearly visible
+4. Guided and direct GitHub actions are both available, with persisted `YOLO` mode controlling the default
+5. Worktree is exposed as a first-class GitHub capability and behaves as a mixed default: guided flows prefer worktree, direct flows may stay on the current target
+6. `clone`, `pull`, `push`, branch, and merge operations work through the existing Git path and are visible in the UI flow
 
-**Plans:**
-1. Implement GitHub OAuth with PKCE
-2. Store tokens in sessionStorage (not localStorage)
-3. Integrate isomorphic-git for browser-side git
-4. Add token refresh logic
+**Plans:** 5/5 complete (2026-04-22)
+1. Establish GitHub auth/session contract and explicit REST versioning
+2. Build the native GitHub viewer with hybrid repository browsing and project override routing
+3. Add guided/direct action modes, persisted `YOLO`, and Codex-style modals for branch and merge flows
+4. Integrate host-side worktree orchestration and verify the full clone/pull/push/branch/merge path end to end
+5. Close the phase with summary, verification, and tracking updates
 
 ---
 
@@ -367,11 +370,11 @@
 
 ## State
 
-Current phase: 3 (Tessy GitHub)
+Current phase: 4 (Tessy AI)
 
-Phase 1 and Phase 2 are complete and must not be re-executed. Run `/gsd-plan-phase 3` to plan Tessy GitHub.
+Phase 1, Phase 2, and Phase 3 are complete and must not be re-executed. Run `/gsd-plan-phase 4` to plan Tessy AI.
 
 ---
 
 *Roadmap created: 2026-04-20*
-*Last updated: 2026-04-22 after Phase 2 execution and transition to Phase 3*
+*Last updated: 2026-04-22 after Phase 3 execution and transition to Phase 4*
