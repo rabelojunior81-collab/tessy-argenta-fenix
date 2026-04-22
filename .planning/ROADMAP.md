@@ -14,7 +14,7 @@
 |---|-------|------|--------------|------------------|
 | 0 | GSD Setup | Configure operational layer | GSD-01 to GSD-15 | 5 |
 | 1 | Tessy Foundation | Monaco editor + xterm.js terminal working together | TESSY-01 to TESSY-05 | Complete (5/5, 2026-04-21) |
-| 2 | Tessy State | State management + navigation | TESSY-06 to TESSY-08 | 3 |
+| 2 | Tessy State | Application state persists, file explorer works | TESSY-06 to TESSY-08 | Complete (3/3, 2026-04-22) |
 | 3 | Tessy GitHub | GitHub OAuth + repo operations | TESSY-09 to TESSY-12 | 4 |
 | 4 | Tessy AI | Chat + providers + tools | TESSY-13 to TESSY-17 | 5 |
 | 5 | Tessy Workspace | Local filesystem + offline | TESSY-18 to TESSY-20 | 3 |
@@ -89,10 +89,10 @@
 2. File explorer shows tree, click opens file
 3. Loading spinners during file operations, API calls
 
-**Plans:**
-1. Implement Zustand/Context persistence to IndexedDB
-2. Build file explorer component with directory tree
-3. Add loading states with react-query
+**Plans:** 3/3 complete (2026-04-22)
+1. Persist visible session state with safe workspace restore
+2. Build persistent, accessible file explorer with directory tree
+3. Add loading states and refresh smoke coverage
 
 ---
 
@@ -367,11 +367,11 @@
 
 ## State
 
-Current phase: 2 (Tessy State)
+Current phase: 3 (Tessy GitHub)
 
-Phase 1 is complete and must not be re-executed. Run `/gsd-plan-phase 2` to plan Tessy State.
+Phase 1 and Phase 2 are complete and must not be re-executed. Run `/gsd-plan-phase 3` to plan Tessy GitHub.
 
 ---
 
 *Roadmap created: 2026-04-20*
-*Last updated: 2026-04-21 after Phase 1 verification and transition to Phase 2*
+*Last updated: 2026-04-22 after Phase 2 execution and transition to Phase 3*
