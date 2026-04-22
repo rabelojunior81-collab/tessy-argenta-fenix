@@ -1,0 +1,12 @@
+# Ignorar arquivos de ambiente que contêm segredos
+.env
+
+# Ignorar diretórios de dependências do Node.js
+node_modules/
+
+# Ignorar arquivos de log e saída
+*.log
+out/
+
+# Ignorar arquivos de sistema
+.DS_Store

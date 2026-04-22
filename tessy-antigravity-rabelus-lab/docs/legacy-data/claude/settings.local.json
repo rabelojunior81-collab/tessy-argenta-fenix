@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \".agent/missions/journal/workspace-tools-filebrowser-2026-03\")",
+      "Bash(mv \".agent/missions/workspace-tools-filebrowser-2026-03/\"* \".agent/missions/journal/workspace-tools-filebrowser-2026-03/\")",
+      "Bash(rmdir \".agent/missions/workspace-tools-filebrowser-2026-03\")",
+      "Bash(mkdir -p \".agent/missions/journal/filebrowser-folder-crud-fix-2026-03\")",
+      "Bash(mkdir -p \".agent/missions/journal/cryptoservice-integration-2026-03\")",
+      "Bash(mkdir -p \".agent/missions/journal/autodoc-implementation-2026-03\")",
+      "Bash(mkdir -p \".agent/missions/journal/terminal-ux-review-2026-03\")",
+      "Bash(mv \".agent/missions/filebrowser-folder-crud-fix-2026-03/\"* \".agent/missions/journal/filebrowser-folder-crud-fix-2026-03/\")",
+      "Bash(rmdir \".agent/missions/filebrowser-folder-crud-fix-2026-03\")",
+      "Bash(mv \".agent/missions/cryptoservice-integration-2026-03/\"* \".agent/missions/journal/cryptoservice-integration-2026-03/\")",
+      "Bash(rmdir \".agent/missions/cryptoservice-integration-2026-03\")",
+      "Bash(mv \".agent/missions/autodoc-implementation-2026-03/\"* \".agent/missions/journal/autodoc-implementation-2026-03/\")",
+      "Bash(rmdir \".agent/missions/autodoc-implementation-2026-03\")",
+      "Bash(mv \".agent/missions/terminal-ux-review-2026-03/\"* \".agent/missions/journal/terminal-ux-review-2026-03/\")",
+      "Bash(rmdir \".agent/missions/terminal-ux-review-2026-03\")",
+      "Bash(mkdir -p \".agent/missions/journal\")",
+      "Bash(mv \".agent/missions/project-switch-and-wallpaper-2026-03\" \".agent/missions/journal/project-switch-and-wallpaper-2026-03\")"
+    ]
+  }
+}

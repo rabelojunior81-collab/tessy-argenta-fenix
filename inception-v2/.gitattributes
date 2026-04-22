@@ -1,0 +1,19 @@
+# Normalize line endings to LF on checkout (eliminates LF→CRLF warnings on Windows)
+* text=auto eol=lf
+
+# Shell scripts must always be LF (POSIX requirement)
+*.sh text eol=lf
+
+# Windows-specific files keep CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary files — no line ending conversion
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.db binary
+*.sqlite binary
+*.node binary

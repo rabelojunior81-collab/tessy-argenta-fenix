@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Build outputs
+dist/
+build/
+*.tsbuildinfo
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# IDE
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+coverage/
+.nyc_output/
+
+# Temporary files
+.tmp/
+temp/
+*.tmp
+
+# Database
+*.db
+*.db-journal
+*.sqlite
+*.sqlite-journal
+
+# Binary releases
+*.exe
+*.dmg
+*.AppImage
+inception-cli-*
+
+# Cache
+.cache/
+.parcel-cache/
+
+# Turbo
+.turbo/
+
+# Changesets
+.changeset/*.md
+!.changeset/config.json
+!.changeset/README.md
+
+# Inception config (may contain API keys — NEVER commit)
+.inception.json

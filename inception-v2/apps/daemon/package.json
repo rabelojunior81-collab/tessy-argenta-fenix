@@ -1,0 +1,40 @@
+{
+  "name": "@rabeluslab/inception-daemon",
+  "version": "2.0.0",
+  "description": "Inception Framework background service daemon",
+  "license": "MIT",
+  "author": "Rabelus Lab",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@rabeluslab/inception-core": "workspace:*",
+    "@rabeluslab/inception-config": "workspace:*",
+    "@rabeluslab/inception-types": "workspace:*",
+    "@rabeluslab/inception-agent": "workspace:*",
+    "@rabeluslab/inception-memory": "workspace:*",
+    "@rabeluslab/inception-security": "workspace:*",
+    "@rabeluslab/inception-channel-http": "workspace:*",
+    "@rabeluslab/inception-tool-filesystem": "workspace:*",
+    "@rabeluslab/inception-tool-shell": "workspace:*",
+    "@rabeluslab/inception-tool-http": "workspace:*",
+    "@rabeluslab/inception-provider-anthropic": "workspace:*",
+    "@rabeluslab/inception-provider-openai": "workspace:*",
+    "@rabeluslab/inception-provider-gemini": "workspace:*",
+    "@rabeluslab/inception-provider-ollama": "workspace:*"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}

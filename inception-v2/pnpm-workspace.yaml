@@ -1,0 +1,6 @@
+packages:
+  - 'packages/*'
+  - 'packages/tools/*'
+  - 'packages/channels/*'
+  - 'packages/providers/*'
+  - 'apps/*'

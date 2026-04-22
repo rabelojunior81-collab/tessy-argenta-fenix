@@ -1,0 +1,38 @@
+{
+  "name": "@rabeluslab/inception-provider-kimi",
+  "version": "2.0.0",
+  "description": "Kimi (Moonshot AI) coding-focused provider for Inception Framework",
+  "license": "MIT",
+  "author": "Rabelus Lab",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@rabeluslab/inception-types": "workspace:*",
+    "@rabeluslab/inception-core": "workspace:*",
+    "openai": "^4.28.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

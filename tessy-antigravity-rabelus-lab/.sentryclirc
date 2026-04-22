@@ -1,0 +1,8 @@
+# Sentry CLI config — Tessy
+# TDP §1 (TSP): NUNCA commitar auth token aqui.
+# Usar variável de ambiente SENTRY_AUTH_TOKEN no CI/CD.
+# Referência: https://docs.sentry.io/cli/configuration/
+
+[defaults]
+# org=rabelus-lab
+# project=tessy

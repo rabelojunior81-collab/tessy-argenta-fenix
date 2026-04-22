@@ -1,0 +1,54 @@
+{
+  "name": "@rabeluslab/inception",
+  "version": "2.0.0",
+  "description": "Inception Framework CLI — Interactive agent runtime for operators",
+  "license": "MIT",
+  "author": "Rabelus Lab",
+  "type": "module",
+  "bin": {
+    "inception": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@rabeluslab/inception-agent": "workspace:*",
+    "@rabeluslab/inception-protocol": "workspace:*",
+    "@rabeluslab/inception-channel-cli": "workspace:*",
+    "@rabeluslab/inception-config": "workspace:*",
+    "@rabeluslab/inception-core": "workspace:*",
+    "@rabeluslab/inception-memory": "workspace:*",
+    "@rabeluslab/inception-provider-anthropic": "workspace:*",
+    "@rabeluslab/inception-provider-bailian": "workspace:*",
+    "@rabeluslab/inception-provider-gemini": "workspace:*",
+    "@rabeluslab/inception-provider-gemini-oauth": "workspace:*",
+    "@rabeluslab/inception-provider-kilo": "workspace:*",
+    "@rabeluslab/inception-provider-kimi": "workspace:*",
+    "@rabeluslab/inception-provider-ollama": "workspace:*",
+    "@rabeluslab/inception-provider-openai": "workspace:*",
+    "@rabeluslab/inception-provider-openai-oauth": "workspace:*",
+    "@rabeluslab/inception-provider-opencode-zen": "workspace:*",
+    "@rabeluslab/inception-provider-openrouter": "workspace:*",
+    "@rabeluslab/inception-provider-zai": "workspace:*",
+    "@rabeluslab/inception-security": "workspace:*",
+    "@rabeluslab/inception-tool-filesystem": "workspace:*",
+    "@rabeluslab/inception-tool-http": "workspace:*",
+    "@rabeluslab/inception-tool-shell": "workspace:*",
+    "@rabeluslab/inception-types": "workspace:*",
+    "commander": "^12.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^5.0.5",
+    "tsup": "^8.0.2",
+    "typescript": "^5.3.3"
+  }
+}

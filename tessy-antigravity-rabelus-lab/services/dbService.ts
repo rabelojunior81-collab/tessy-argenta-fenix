@@ -1,0 +1,128 @@
+import type { Table } from 'dexie';
+import Dexie from 'dexie';
+import type {
+  Conversation,
+  Project,
+  RepositoryItem,
+  SharedConversation,
+  Template,
+  Workspace,
+} from '../types';
+
+export class TessyDatabase extends Dexie {
+  projects!: Table<Project>;
+  conversations!: Table<Conversation>;
+  library!: Table<RepositoryItem>;
+  templates!: Table<Template>;
+  settings!: Table<{ key: string; value: any }>;
+  files!: Table<{
+    id: string;
+    projectId: string;
+    name: string;
+    type: string;
+    blob: Blob;
+    createdAt: number;
+  }>;
+  secrets!: Table<{ id: string; key: string; value: string }>;
+  shared_conversations!: Table<SharedConversation>;
+  workspaces!: Table<Workspace>;
+
+  constructor() {
+    super('TessyDB');
+
+    (this as any).version(1).stores({
+      projects: 'id, name, createdAt, updatedAt',
+      conversations: 'id, projectId, title, createdAt, updatedAt',
+      library: 'id, projectId, title, createdAt',
+      templates: 'id, label, createdAt',
+      settings: 'key',
+      files: 'id, projectId, name, type, createdAt',
+      secrets: 'id, key',
+    });
+
+    (this as any).version(2).stores({
+      shared_conversations: 'code, createdAt, expiresAt',
+    });
+
+    (this as any).version(3).stores({
+      library: 'id, projectId, title, timestamp',
+    });
+
+    // Version 4: Add workspaces table for file system synchronization
+    (this as any).version(4).stores({
+      workspaces: 'id, projectId, name, status, createdAt, updatedAt',
+    });
+
+    (this as any).version(5).stores({
+      projects: 'id, name, createdAt, updatedAt',
+      conversations: 'id, projectId, title, createdAt, updatedAt',
+      library: 'id, projectId, title, timestamp',
+      templates: 'id, projectId, label, createdAt',
+      settings: 'key',
+      files: 'id, projectId, name, type, createdAt',
+      secrets: 'id, key',
+      shared_conversations: 'code, createdAt, expiresAt',
+      workspaces: 'id, projectId, name, status, createdAt, updatedAt',
+    });
+
+    (this as any).version(6).stores({
+      projects: 'id, name, createdAt, updatedAt',
+      conversations: 'id, projectId, title, createdAt, updatedAt',
+      library: 'id, projectId, title, timestamp',
+      templates: 'id, projectId, label, createdAt',
+      settings: 'key',
+      files: 'id, projectId, name, type, createdAt',
+      secrets: 'id, key',
+      shared_conversations: 'code, createdAt, expiresAt',
+      workspaces:
+        'id, projectId, name, status, brokerStatus, brokerWorkspaceId, createdAt, updatedAt',
+    });
+  }
+}
+
+export const db = new TessyDatabase();
+
+export async function migrateToIndexedDB(): Promise<void> {
+  try {
+    const isMigrated = await db.settings.get('migration-completed');
+    if (isMigrated?.value === true) return;
+
+    const defaultProjectId = 'default-project';
+
+    // Fix: Explicitly cast to any to resolve property 'transaction' not found error in this environment
+    await (db as any).transaction('rw', ['projects', 'settings'], async () => {
+      const exists = await db.projects.get(defaultProjectId);
+      if (!exists) {
+        await db.projects.put({
+          id: defaultProjectId,
+          name: 'Projeto Padrão',
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+        });
+      }
+      await db.settings.put({ key: 'migration-completed', value: true });
+    });
+  } catch (error) {
+    console.warn('Migration status:', error);
+  }
+}
+
+export const generateUUID = (): string => {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, (c) => {
+    const r = (Math.random() * 16) | 0;
+    const v = c === 'x' ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+};
+
+export const generateShareCode = (length: number = 6): string => {
+  const charset = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let retVal = '';
+  for (let i = 0; i < length; ++i) {
+    retVal += charset.charAt(Math.floor(Math.random() * charset.length));
+  }
+  return retVal;
+};

@@ -1,0 +1,27 @@
+import { defineConfig } from 'tsup';
+export default defineConfig({
+  entry: ['src/index.ts'],
+  format: ['esm'],
+  dts: false,
+  sourcemap: true,
+  clean: true,
+  outDir: 'dist',
+  target: 'node22',
+  banner: { js: '#!/usr/bin/env node' },
+  external: [
+    '@rabeluslab/inception-types',
+    '@rabeluslab/inception-core',
+    '@rabeluslab/inception-config',
+    '@rabeluslab/inception-agent',
+    '@rabeluslab/inception-memory',
+    '@rabeluslab/inception-security',
+    '@rabeluslab/inception-channel-http',
+    '@rabeluslab/inception-provider-anthropic',
+    '@rabeluslab/inception-provider-openai',
+    '@rabeluslab/inception-provider-gemini',
+    '@rabeluslab/inception-provider-ollama',
+    '@rabeluslab/inception-tool-filesystem',
+    '@rabeluslab/inception-tool-shell',
+    '@rabeluslab/inception-tool-http',
+  ],
+});

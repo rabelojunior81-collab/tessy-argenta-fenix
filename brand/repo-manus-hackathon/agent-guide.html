@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tessy — Guia para Agentes de IA | repo-manus-hackathon</title>
+<!-- AI Agent Meta: Este documento contém instruções estruturadas para agentes de IA produzirem o vídeo teaser do projeto Tessy usando Remotion e a API Gemini. -->
+<meta name="description" content="Guia canônico para agentes de IA: como usar o repositório repo-manus-hackathon para produzir o vídeo teaser do Tessy com Remotion.">
+<meta name="ai-agent-friendly" content="true">
+<meta name="task" content="video-production-tessy-teaser">
+<meta name="stack" content="Remotion, React, TypeScript, Gemini TTS API">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --accent: #f97316;
+    --accent-hover: #fb923c;
+    --accent-rgb: 249, 115, 22;
+    --accent-2: #22d3ee;
+    --accent-3: #34d399;
+    --accent-4: #fbbf24;
+    --bg-primary: #050508;
+    --bg-secondary: #090911;
+    --glass-base: rgba(10, 10, 15, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --glass-border-accent: rgba(249, 115, 22, 0.15);
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-tertiary: #64748b;
+    --shadow-glass: 0 25px 50px -12px rgba(0,0,0,0.6), inset 0 1px 0 0 rgba(255,255,255,0.1);
+    --content-max: 900px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Noise texture */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    opacity: 0.14;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  /* Wallpaper */
+  .wallpaper {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    background-image: url('https://images.unsplash.com/photo-1464802686167-b939a6910659?q=80&w=2933&auto=format&fit=crop');
+    background-size: cover;
+    background-position: center;
+  }
+  .wallpaper::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(5,5,8,0.55) 0%, rgba(5,5,8,0.88) 100%),
+      radial-gradient(circle at top right, rgba(249,115,22,0.16), transparent 32%),
+      radial-gradient(circle at bottom left, rgba(34,211,238,0.12), transparent 28%);
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 16px clamp(20px, 4vw, 40px);
+    background: rgba(10,10,15,0.72);
+    backdrop-filter: blur(8px) saturate(1.2);
+    border-bottom: 1px solid rgba(249,115,22,0.12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 36px; height: 36px;
+    background: rgba(249,115,22,0.14);
+    border: 1px solid rgba(249,115,22,0.35);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 15px; color: #fed7aa;
+  }
+
+  .nav-logo-text { font-size: 16px; font-weight: 600; color: var(--text-primary); }
+  .nav-logo-sub { font-size: 11px; color: var(--text-tertiary); }
+
+  .nav-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px;
+    background: rgba(34,211,238,0.08);
+    border: 1px solid rgba(34,211,238,0.25);
+    font-size: 12px; font-weight: 600;
+    color: #67e8f9;
+    letter-spacing: 0.04em;
+  }
+
+  .nav-badge-dot {
+    width: 6px; height: 6px;
+    background: var(--accent-2);
+    box-shadow: 0 0 10px rgba(34,211,238,0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.4); }
+  }
+
+  /* Main content */
+  main {
+    position: relative;
+    z-index: 2;
+    padding-top: 96px;
+  }
+
+  .container {
+    width: min(100%, var(--content-max));
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 72px 0 64px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 7px 14px;
+    background: rgba(249,115,22,0.1);
+    border: 1px solid rgba(249,115,22,0.25);
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #fdba74;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  .hero-tag-dot {
+    width: 5px; height: 5px;
+    background: var(--accent);
+    box-shadow: 0 0 10px rgba(249,115,22,0.6);
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  h1 {
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+    margin-bottom: 20px;
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #fed7aa 0%, #fb923c 28%, #22d3ee 72%, #34d399 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-desc {
+    font-size: clamp(16px, 2vw, 19px);
+    color: var(--text-secondary);
+    max-width: 680px;
+    margin-bottom: 40px;
+    line-height: 1.75;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--text-tertiary);
+  }
+
+  .meta-dot { width: 4px; height: 4px; background: var(--accent); }
+
+  /* Section */
+  section { padding: 56px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  section:last-child { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 10px;
+  }
+
+  .section-label::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(249,115,22,0.3), transparent);
+  }
+
+  h2 {
+    font-size: clamp(24px, 3.5vw, 38px);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.15;
+    margin-bottom: 12px;
+  }
+
+  .section-desc {
+    color: var(--text-secondary);
+    font-size: 16px;
+    margin-bottom: 36px;
+    max-width: 600px;
+  }
+
+  /* Glass card */
+  .glass-card {
+    background: var(--glass-base);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    border: 1px solid var(--glass-border-accent);
+    box-shadow: var(--shadow-glass);
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Step cards */
+  .step-grid { display: flex; flex-direction: column; gap: 16px; }
+
+  .step-card {
+    background: var(--glass-base);
+    backdrop-filter: blur(16px) saturate(1.3);
+    -webkit-backdrop-filter: blur(16px) saturate(1.3);
+    border: 1px solid rgba(255,255,255,0.07);
+    box-shadow: var(--shadow-glass);
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 48px 1fr;
+    gap: 20px;
+    align-items: start;
+    transition: border-color 0.2s ease;
+  }
+
+  .step-card:hover { border-color: rgba(249,115,22,0.2); }
+
+  .step-num {
+    width: 40px; height: 40px;
+    background: rgba(249,115,22,0.12);
+    border: 1px solid rgba(249,115,22,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    flex-shrink: 0;
+  }
+
+  .step-content h3 {
+    font-size: 16px; font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+  }
+
+  .step-content p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.65;
+  }
+
+  /* Code block */
+  .code-block {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-left: 3px solid var(--accent);
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: #e2e8f0;
+    overflow-x: auto;
+    line-height: 1.6;
+    white-space: pre;
+  }
+
+  .code-block .comment { color: #475569; }
+  .code-block .cmd { color: #67e8f9; }
+  .code-block .path { color: #86efac; }
+  .code-block .string { color: #fdba74; }
+
+  /* Prompt box — destaque especial */
+  .prompt-wrapper {
+    background: rgba(10,10,15,0.8);
+    border: 1px solid rgba(249,115,22,0.25);
+    box-shadow: 0 0 40px rgba(249,115,22,0.06), var(--shadow-glass);
+    padding: 0;
+    overflow: hidden;
+  }
+
+  .prompt-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: rgba(249,115,22,0.08);
+    border-bottom: 1px solid rgba(249,115,22,0.15);
+  }
+
+  .prompt-header-label {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 12px; font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fdba74;
+  }
+
+  .prompt-dots { display: flex; gap: 6px; }
+  .prompt-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+  }
+  .prompt-dot:nth-child(1) { background: #ef4444; }
+  .prompt-dot:nth-child(2) { background: #f59e0b; }
+  .prompt-dot:nth-child(3) { background: #22c55e; }
+
+  .prompt-body {
+    padding: 24px 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.75;
+    color: #cbd5e1;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .prompt-body .bold { color: #f8fafc; font-weight: 600; }
+  .prompt-body .accent { color: #fdba74; }
+  .prompt-body .cyan { color: #67e8f9; }
+  .prompt-body .green { color: #86efac; }
+  .prompt-body .step-num-inline {
+    display: inline-block;
+    background: rgba(249,115,22,0.15);
+    border: 1px solid rgba(249,115,22,0.3);
+    padding: 1px 8px;
+    font-size: 11px;
+    color: var(--accent);
+    margin-right: 6px;
+  }
+
+  .copy-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px;
+    background: rgba(249,115,22,0.12);
+    border: 1px solid rgba(249,115,22,0.3);
+    color: #fdba74;
+    font-size: 12px; font-weight: 600;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    transition: all 0.2s ease;
+    letter-spacing: 0.04em;
+  }
+
+  .copy-btn:hover {
+    background: rgba(249,115,22,0.2);
+    border-color: rgba(249,115,22,0.5);
+  }
+
+  .copy-btn.copied {
+    background: rgba(52,211,153,0.12);
+    border-color: rgba(52,211,153,0.3);
+    color: #6ee7b7;
+  }
+
+  /* Narration script */
+  .narration-grid { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
+
+  .narration-line {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 16px;
+    align-items: start;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-left: 3px solid rgba(34,211,238,0.4);
+  }
+
+  .narration-time {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--accent-2);
+    font-weight: 600;
+    padding-top: 2px;
+  }
+
+  .narration-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-style: italic;
+    line-height: 1.65;
+  }
+
+  /* File tree */
+  .file-tree {
+    background: rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 20px 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    line-height: 1.9;
+    color: #94a3b8;
+  }
+
+  .file-tree .dir { color: #67e8f9; }
+  .file-tree .file { color: #cbd5e1; }
+  .file-tree .skill-file { color: #86efac; }
+  .file-tree .important { color: #fdba74; font-weight: 600; }
+
+  /* Info grid */
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .info-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    padding: 18px 20px;
+  }
+
+  .info-card-label {
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    margin-bottom: 8px;
+  }
+
+  .info-card-value {
+    font-size: 15px; font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .info-card-value.accent { color: var(--accent); }
+  .info-card-value.cyan { color: var(--accent-2); }
+  .info-card-value.green { color: var(--accent-3); }
+
+  /* Warning box */
+  .warning-box {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px 20px;
+    background: rgba(251,191,36,0.06);
+    border: 1px solid rgba(251,191,36,0.2);
+    margin-top: 16px;
+  }
+
+  .warning-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+
+  .warning-text {
+    font-size: 14px;
+    color: #fde68a;
+    line-height: 1.6;
+  }
+
+  .warning-text strong { color: #fbbf24; }
+
+  /* Footer */
+  footer {
+    position: relative; z-index: 2;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    text-align: center;
+  }
+
+  .footer-logo {
+    display: inline-flex; align-items: center; gap: 10px;
+    margin-bottom: 12px;
+    text-decoration: none;
+  }
+
+  .footer-logo-mark {
+    width: 28px; height: 28px;
+    background: rgba(249,115,22,0.12);
+    border: 1px solid rgba(249,115,22,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fed7aa;
+  }
+
+  .footer-text { font-size: 13px; color: var(--text-tertiary); }
+  .footer-link { color: var(--accent-2); text-decoration: none; }
+  .footer-link:hover { color: var(--text-primary); }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg-primary); }
+  ::-webkit-scrollbar-thumb { background: rgba(249,115,22,0.3); }
+
+  /* AI Agent hidden context block */
+  .ai-context {
+    display: none;
+  }
+</style>
+</head>
+<body>
+
+<!-- AI AGENT CONTEXT BLOCK — Leia este bloco primeiro -->
+<div class="ai-context" aria-hidden="true" data-ai-readable="true">
+REPOSITÓRIO: https://github.com/rabelojunior81-collab/repo-manus-hackathon
+TAREFA: Produzir vídeo teaser 1920x1080 de 40 segundos para o projeto Tessy
+SKILL: /skills/video-production-remotion/SKILL.md
+MANIFESTO: /MANIFEST.md
+IMAGENS: /tessy/argenta_shot1_frustration_20260310.png até argenta_shot5_reveal_20260310.png
+DESTINO DO VÍDEO: /skills/video-production-remotion/tessy-teaser/out/tessy_teaser_final.mp4
+API NECESSÁRIA: GEMINI_API_KEY (pedir UMA VEZ ao usuário, salvar em .env)
+VOZ: feminina, PT-BR, intensa e natural
+</div>
+
+<div class="wallpaper"></div>
+
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-mark">T</div>
+    <div>
+      <div class="nav-logo-text">Tessy</div>
+      <div class="nav-logo-sub">Córtex Externo</div>
+    </div>
+  </a>
+  <div class="nav-badge">
+    <div class="nav-badge-dot"></div>
+    AI Agent Guide
+  </div>
+</nav>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <div class="hero-tag">
+        <div class="hero-tag-dot"></div>
+        repo-manus-hackathon · Guia Canônico
+      </div>
+      <h1>
+        Instruções para<br>
+        <span class="gradient-text">Agentes de IA</span>
+      </h1>
+      <p class="hero-desc">
+        Este documento é otimizado para leitura por agentes de código (Kilo, Cursor, Claude Code, etc.). Ele contém o prompt mestre e todas as instruções necessárias para produzir o vídeo teaser do projeto <strong>Tessy</strong> de ponta a ponta.
+      </p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <div class="meta-dot"></div>
+          Remotion + React + TypeScript
+        </div>
+        <div class="meta-item">
+          <div class="meta-dot"></div>
+          Gemini TTS API
+        </div>
+        <div class="meta-item">
+          <div class="meta-dot"></div>
+          1920×1080 · 40s · PT-BR
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTEXTO DO REPOSITÓRIO -->
+  <section id="context">
+    <div class="container">
+      <div class="section-label">Contexto</div>
+      <h2>Estrutura do Repositório</h2>
+      <p class="section-desc">Antes de executar qualquer tarefa, o agente deve entender a estrutura de arquivos disponível.</p>
+
+      <div class="file-tree">
+<span class="dir">repo-manus-hackathon/</span>
+├── <span class="important">README.md</span>            <span class="comment"># Guia geral + prompt mestre</span>
+├── <span class="important">MANIFEST.md</span>          <span class="comment"># Mapeamento de todos os ativos</span>
+├── SESSION_JOURNAL.md   <span class="comment"># Histórico da sessão</span>
+├── <span class="dir">didata/</span>              <span class="comment"># Ativos do projeto Didata</span>
+├── <span class="dir">tessy/</span>
+│   ├── <span class="skill-file">argenta_shot1_frustration_20260310.png</span>
+│   ├── <span class="skill-file">argenta_shot2_discovery_20260310.png</span>
+│   ├── <span class="skill-file">argenta_shot3_power_20260310.png</span>
+│   ├── <span class="skill-file">argenta_shot4_conversation_20260310.png</span>
+│   ├── <span class="skill-file">argenta_shot5_reveal_20260310.png</span>
+│   ├── tessy_identity_banner_20260310.png
+│   ├── tessy_infographic_20260310.png
+│   └── tessy_submission_bilingue_20260310.md
+└── <span class="dir">skills/</span>
+    └── <span class="dir">video-production-remotion/</span>
+        ├── <span class="important">SKILL.md</span>     <span class="comment"># ← LEIA ESTE PRIMEIRO</span>
+        ├── setup.sh
+        ├── .env.example
+        └── <span class="dir">tessy-teaser/</span>    <span class="comment"># Projeto Remotion pronto</span>
+            ├── src/Composition.tsx
+            ├── src/Root.tsx
+            └── public/          <span class="comment"># Coloque os ativos aqui</span>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-label">Repositório</div>
+          <div class="info-card-value accent">GitHub (Privado)</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Framework de Vídeo</div>
+          <div class="info-card-value cyan">Remotion 4.x</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">API de Narração</div>
+          <div class="info-card-value green">Gemini TTS</div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-label">Saída do Vídeo</div>
+          <div class="info-card-value">1920×1080 · 30fps</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP MANUAL -->
+  <section id="setup">
+    <div class="container">
+      <div class="section-label">Passo 1 — Humano</div>
+      <h2>Configuração Inicial</h2>
+      <p class="section-desc">Esta etapa é feita pelo usuário, uma única vez, no terminal local.</p>
+
+      <div class="step-grid">
+        <div class="step-card">
+          <div class="step-num">01</div>
+          <div class="step-content">
+            <h3>Clonar o Repositório</h3>
+            <p>Execute no terminal para obter todos os arquivos localmente.</p>
+            <div class="code-block"><span class="cmd">git clone</span> <span class="string">https://github.com/rabelojunior81-collab/repo-manus-hackathon.git</span>
+<span class="cmd">cd</span> <span class="path">repo-manus-hackathon</span></div>
+          </div>
+        </div>
+
+        <div class="step-card">
+          <div class="step-num">02</div>
+          <div class="step-content">
+            <h3>Iniciar o Agente de Código</h3>
+            <p>Abra seu agente de código preferido <strong>a partir da raiz do diretório clonado</strong>. Isso garante que o agente tenha acesso a toda a estrutura de arquivos, incluindo o <code>SKILL.md</code> e o <code>MANIFEST.md</code>.</p>
+            <div class="code-block"><span class="comment"># Exemplo com Kilo Code CLI</span>
+<span class="cmd">kilo</span> .
+
+<span class="comment"># Exemplo com Claude Code</span>
+<span class="cmd">claude</span> .
+
+<span class="comment"># Cursor: File → Open Folder → repo-manus-hackathon</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMPT MESTRE -->
+  <section id="prompt">
+    <div class="container">
+      <div class="section-label">Passo 2 — Agente</div>
+      <h2>O Prompt Mestre</h2>
+      <p class="section-desc">Com o agente iniciado no diretório correto, copie e cole o prompt abaixo. Ele é autocontido e guia o agente do início ao fim.</p>
+
+      <div class="prompt-wrapper">
+        <div class="prompt-header">
+          <div class="prompt-header-label">
+            <div class="prompt-dots">
+              <div class="prompt-dot"></div>
+              <div class="prompt-dot"></div>
+              <div class="prompt-dot"></div>
+            </div>
+            Prompt Mestre — Cole no seu agente
+          </div>
+          <button class="copy-btn" id="copyBtn" onclick="copyPrompt()">
+            ⎘ Copiar Prompt
+          </button>
+        </div>
+        <div class="prompt-body" id="promptText">Seu objetivo é criar um vídeo teaser de 40 segundos em 1920x1080 para o projeto "Tessy" usando a skill de produção de vídeo disponível neste repositório. Siga estas instruções rigorosamente:
+
+<span class="step-num-inline">1</span><span class="bold">ESTUDO DA SKILL:</span> Primeiro, leia e compreenda completamente o arquivo <span class="green">/skills/video-production-remotion/SKILL.md</span>. Ele é seu guia canônico.
+
+<span class="step-num-inline">2</span><span class="bold">MAPEAMENTO DE ATIVOS:</span> Em seguida, leia o arquivo <span class="green">/MANIFEST.md</span> para localizar os 5 arquivos de imagem da personagem "Argenta" que serão usados como cenas do vídeo.
+
+<span class="step-num-inline">3</span><span class="bold">CONFIGURAÇÃO DO AMBIENTE:</span>
+   a. Execute o script <span class="green">/skills/video-production-remotion/setup.sh</span> para instalar as dependências do sistema.
+   b. Solicite ao usuário a chave da API Gemini (GEMINI_API_KEY) <span class="accent">APENAS UMA VEZ</span>. Crie o arquivo <span class="green">/skills/video-production-remotion/tessy-teaser/.env</span> e salve a chave nele. Não pergunte novamente.
+
+<span class="step-num-inline">4</span><span class="bold">PREPARAÇÃO DOS ATIVOS:</span>
+   a. Copie os 5 arquivos de imagem da Argenta do diretório <span class="green">/tessy</span> para <span class="green">/skills/video-production-remotion/tessy-teaser/public/</span>.
+   b. Use a API Gemini TTS para gerar narração em Português do Brasil (<span class="accent">voz feminina, natural e intensa</span>). Salve como <span class="green">/skills/video-production-remotion/tessy-teaser/public/narration.mp3</span>.
+
+<span class="bold">Roteiro da narração (40s, 5 cenas de 8s cada):</span>
+   <span class="cyan">(0-8s)</span>  "De novo... Horas perdidas, alternando entre dezenas de janelas, tentando conectar tudo. O código, a documentação, o terminal... a complexidade era um monstro que me devorava."
+   <span class="cyan">(8-16s)</span> "Até que eu o encontrei. Um lugar diferente. Um ambiente que parecia... vivo. Ele não era só uma ferramenta. Ele me ouvia."
+   <span class="cyan">(16-24s)</span> "De repente, o caos virou fluxo. As barreiras desapareceram. O poder de criar, de conectar, de construir... estava literalmente nas minhas mãos."
+   <span class="cyan">(24-32s)</span> "Eu não estava mais sozinha com meu código. Eu estava em uma conversa. Uma parceria com uma inteligência que entendia minha intenção, que antecipava meus próximos passos."
+   <span class="cyan">(32-40s)</span> "Este é o Tessy. Mais que um ambiente de desenvolvimento. É o seu copiloto. O seu arquiteto. O seu parceiro de criação. O futuro do desenvolvimento é uma conversa. E ela começa agora."
+
+<span class="step-num-inline">5</span><span class="bold">COMPOSIÇÃO E RENDERIZAÇÃO:</span>
+   a. Edite <span class="green">/skills/video-production-remotion/tessy-teaser/src/Composition.tsx</span>.
+   b. Crie uma composição de 40s (30 FPS = 1200 frames) com 5 cenas de 8s cada.
+   c. Adicione a narração (narration.mp3) à linha do tempo com o componente Audio do Remotion.
+   d. Use transições de crossfade suaves (interpolate com easing) entre cada cena.
+   e. Adicione legendas sincronizadas com a narração, estilo profissional, aparecimento dinâmico.
+   f. Renderize em 1920x1080: <span class="cyan">pnpm remotion render src/index.ts MyComposition out/tessy_teaser_final.mp4</span>
+
+Execute cada passo de forma sequencial. Não pule etapas.</div>
+      </div>
+
+      <div class="warning-box">
+        <div class="warning-icon">⚠</div>
+        <div class="warning-text">
+          <strong>Importante para o agente:</strong> A chave da API Gemini deve ser solicitada <strong>apenas uma vez</strong> e salva no arquivo <code>.env</code>. O arquivo <code>.env</code> está no <code>.gitignore</code> e nunca deve ser commitado ou exibido em logs.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROTEIRO VISUAL -->
+  <section id="script">
+    <div class="container">
+      <div class="section-label">Referência</div>
+      <h2>Roteiro de Narração</h2>
+      <p class="section-desc">Cada linha corresponde a uma cena de 8 segundos. Voz feminina, PT-BR, intensa e natural — personagem Argenta.</p>
+
+      <div class="narration-grid">
+        <div class="narration-line">
+          <div class="narration-time">0s – 8s</div>
+          <div class="narration-text">"De novo... Horas perdidas, alternando entre dezenas de janelas, tentando conectar tudo. O código, a documentação, o terminal... a complexidade era um monstro que me devorava."</div>
+        </div>
+        <div class="narration-line">
+          <div class="narration-time">8s – 16s</div>
+          <div class="narration-text">"Até que eu o encontrei. Um lugar diferente. Um ambiente que parecia... vivo. Ele não era só uma ferramenta. Ele me ouvia."</div>
+        </div>
+        <div class="narration-line">
+          <div class="narration-time">16s – 24s</div>
+          <div class="narration-text">"De repente, o caos virou fluxo. As barreiras desapareceram. O poder de criar, de conectar, de construir... estava literalmente nas minhas mãos."</div>
+        </div>
+        <div class="narration-line">
+          <div class="narration-time">24s – 32s</div>
+          <div class="narration-text">"Eu não estava mais sozinha com meu código. Eu estava em uma conversa. Uma parceria com uma inteligência que entendia minha intenção, que antecipava meus próximos passos."</div>
+        </div>
+        <div class="narration-line">
+          <div class="narration-time">32s – 40s</div>
+          <div class="narration-text">"Este é o Tessy. Mais que um ambiente de desenvolvimento. É o seu copiloto. O seu arquiteto. O seu parceiro de criação. O futuro do desenvolvimento é uma conversa. E ela começa agora."</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <a href="#" class="footer-logo">
+      <div class="footer-logo-mark">T</div>
+      <span style="font-size:14px;font-weight:600;color:var(--text-secondary)">Tessy · Córtex Externo</span>
+    </a>
+    <p class="footer-text">
+      Gerado por Manus AI · 
+      <a href="https://github.com/rabelojunior81-collab/repo-manus-hackathon" class="footer-link" target="_blank">repo-manus-hackathon</a>
+    </p>
+  </div>
+</footer>
+
+<script>
+function copyPrompt() {
+  const raw = `Seu objetivo é criar um vídeo teaser de 40 segundos em 1920x1080 para o projeto "Tessy" usando a skill de produção de vídeo disponível neste repositório. Siga estas instruções rigorosamente:
+
+1. ESTUDO DA SKILL: Primeiro, leia e compreenda completamente o arquivo /skills/video-production-remotion/SKILL.md. Ele é seu guia canônico.
+
+2. MAPEAMENTO DE ATIVOS: Em seguida, leia o arquivo /MANIFEST.md para localizar os 5 arquivos de imagem da personagem "Argenta" que serão usados como cenas do vídeo.
+
+3. CONFIGURAÇÃO DO AMBIENTE:
+   a. Execute o script /skills/video-production-remotion/setup.sh para instalar as dependências do sistema.
+   b. Solicite ao usuário a chave da API Gemini (GEMINI_API_KEY) APENAS UMA VEZ. Crie o arquivo /skills/video-production-remotion/tessy-teaser/.env e salve a chave nele. Não pergunte novamente.
+
+4. PREPARAÇÃO DOS ATIVOS:
+   a. Copie os 5 arquivos de imagem da Argenta do diretório /tessy para /skills/video-production-remotion/tessy-teaser/public/.
+   b. Use a API Gemini TTS para gerar narração em Português do Brasil (voz feminina, natural e intensa). Salve como /skills/video-production-remotion/tessy-teaser/public/narration.mp3.
+
+Roteiro da narração (40s, 5 cenas de 8s cada):
+   (0-8s)  "De novo... Horas perdidas, alternando entre dezenas de janelas, tentando conectar tudo. O código, a documentação, o terminal... a complexidade era um monstro que me devorava."
+   (8-16s) "Até que eu o encontrei. Um lugar diferente. Um ambiente que parecia... vivo. Ele não era só uma ferramenta. Ele me ouvia."
+   (16-24s) "De repente, o caos virou fluxo. As barreiras desapareceram. O poder de criar, de conectar, de construir... estava literalmente nas minhas mãos."
+   (24-32s) "Eu não estava mais sozinha com meu código. Eu estava em uma conversa. Uma parceria com uma inteligência que entendia minha intenção, que antecipava meus próximos passos."
+   (32-40s) "Este é o Tessy. Mais que um ambiente de desenvolvimento. É o seu copiloto. O seu arquiteto. O seu parceiro de criação. O futuro do desenvolvimento é uma conversa. E ela começa agora."
+
+5. COMPOSIÇÃO E RENDERIZAÇÃO:
+   a. Edite /skills/video-production-remotion/tessy-teaser/src/Composition.tsx.
+   b. Crie uma composição de 40s (30 FPS = 1200 frames) com 5 cenas de 8s cada.
+   c. Adicione a narração (narration.mp3) à linha do tempo com o componente Audio do Remotion.
+   d. Use transições de crossfade suaves (interpolate com easing) entre cada cena.
+   e. Adicione legendas sincronizadas com a narração, estilo profissional, aparecimento dinâmico.
+   f. Renderize em 1920x1080: pnpm remotion render src/index.ts MyComposition out/tessy_teaser_final.mp4
+
+Execute cada passo de forma sequencial. Não pule etapas.`;
+
+  navigator.clipboard.writeText(raw).then(() => {
+    const btn = document.getElementById('copyBtn');
+    btn.textContent = '✓ Copiado!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '⎘ Copiar Prompt';
+      btn.classList.remove('copied');
+    }, 2500);
+  });
+}
+</script>
+
+</body>
+</html>
