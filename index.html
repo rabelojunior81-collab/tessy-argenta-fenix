@@ -7,16 +7,33 @@
   <title>Tessy Argenta Fenix</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
+  <div class="wallpaper"></div>
   <div class="noise"></div>
   <div class="orb orb-a"></div>
   <div class="orb orb-b"></div>
+  <nav class="topbar">
+    <a class="brand" href="#hero">
+      <span class="brand-mark">TF</span>
+      <span class="brand-copy">
+        <strong>Tessy Argenta Fenix</strong>
+        <small>master hub do ecossistema</small>
+      </span>
+    </a>
+    <div class="topbar-links">
+      <a href="#momento">Momento</a>
+      <a href="#atlas">Atlas</a>
+      <a href="#arquivo">Arquivo</a>
+      <a href="#chronicle">Cronologia</a>
+    </div>
+    <span class="nav-badge"><span></span>Git LFS + sync dupla</span>
+  </nav>
 
   <main class="shell">
-    <header class="hero panel">
+    <header class="hero panel" id="hero">
       <div class="eyebrow">Master repo · global hub · archive layer</div>
       <div class="hero-grid">
         <section>
@@ -29,7 +46,7 @@
 
           <div class="hero-actions">
             <a class="button primary" href="#atlas">Ver atlas</a>
-            <a class="button secondary" href="#arquivos">Explorar ativos</a>
+            <a class="button secondary" href="#arquivo">Explorar ativos</a>
           </div>
 
           <div class="stats">
@@ -76,6 +93,41 @@
       <span>GitLab</span>
     </section>
 
+    <section class="panel moment-panel" id="momento">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">O momento</p>
+          <h2>Um hub não pode parecer uma nota de rodapé</h2>
+        </div>
+        <p>
+          O objetivo é mostrar o sistema inteiro com força editorial, não
+          reduzir o contexto a um resumo frio.
+        </p>
+      </div>
+      <div class="moment-grid">
+        <article class="moment-card quote">
+          <p class="quote-mark">“</p>
+          <h3>O master repo precisa carregar o peso da história, da estética e da operação.</h3>
+          <p>Ele reúne o arquivo do hackathon, o runtime Inception, o bootstrap do TUI e a regra formal de sincronização dupla.</p>
+        </article>
+        <article class="moment-card">
+          <p class="tag">Local-first</p>
+          <h3>O computador do usuário continua no centro.</h3>
+          <p>Filesystem, shell, Git e contexto local aparecem como poderes reais, não como abstração escondida.</p>
+        </article>
+        <article class="moment-card">
+          <p class="tag">Mission-first</p>
+          <h3>Inception organiza agentes por missão.</h3>
+          <p>Providers, canais, ferramentas, memória e protocolos entram como arquitetura, não como improviso.</p>
+        </article>
+        <article class="moment-card">
+          <p class="tag">Curadoria</p>
+          <h3>O master repo não substitui os módulos.</h3>
+          <p>Ele apresenta o ecossistema inteiro e mantém Tessy, Inception v2 e inception-tui em suas linhas de vida próprias.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="panel" id="atlas">
       <div class="section-head">
         <div>
@@ -111,7 +163,7 @@
       </div>
     </section>
 
-    <section class="panel" id="arquivos">
+    <section class="panel" id="arquivo">
       <div class="section-head">
         <div>
           <p class="eyebrow">Asset archive</p>
@@ -123,15 +175,40 @@
         </p>
       </div>
 
-      <div class="gallery">
-        <figure><img src="./brand/repo-manus-hackathon/tessy/argenta_shot1_frustration_20260310.png" alt="Argenta frustration shot" /><figcaption>Frustration</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/tessy/argenta_shot2_discovery_20260310.png" alt="Argenta discovery shot" /><figcaption>Discovery</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/tessy/argenta_shot3_power_20260310.png" alt="Argenta power shot" /><figcaption>Power</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/tessy/argenta_shot4_conversation_20260310.png" alt="Argenta conversation shot" /><figcaption>Conversation</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/tessy/argenta_shot5_reveal_20260310.png" alt="Argenta reveal shot" /><figcaption>Reveal</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/didata/didata_identity_20260308.png" alt="Didata identity" /><figcaption>Didata identity</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/didata/seldon_shot_architect_20260308.png" alt="Seldon architect" /><figcaption>Architect</figcaption></figure>
-        <figure><img src="./brand/repo-manus-hackathon/didata/seldon_shot_voice_20260308.png" alt="Seldon voice" /><figcaption>Voice</figcaption></figure>
+      <div class="archive-grid">
+        <article class="archive-story">
+          <div class="story-media">
+            <img src="./brand/repo-manus-hackathon/tessy/argenta_shot1_frustration_20260310.png" alt="Argenta frustration shot" />
+            <img src="./brand/repo-manus-hackathon/tessy/argenta_shot2_discovery_20260310.png" alt="Argenta discovery shot" />
+          </div>
+          <div class="story-copy">
+            <p class="tag">Tessy narrative</p>
+            <h3>Da frustração ao controle.</h3>
+            <p>A sequência Argenta mostra a travessia do problema até a revelação. A estética não é decorativa: ela sustenta a história do controle local-first.</p>
+          </div>
+        </article>
+        <article class="archive-story">
+          <div class="story-media">
+            <img src="./brand/repo-manus-hackathon/tessy/argenta_shot3_power_20260310.png" alt="Argenta power shot" />
+            <img src="./brand/repo-manus-hackathon/tessy/argenta_shot4_conversation_20260310.png" alt="Argenta conversation shot" />
+          </div>
+          <div class="story-copy">
+            <p class="tag">System arc</p>
+            <h3>Potência e conversa no mesmo plano.</h3>
+            <p>O trabalho precisa parecer um ambiente vivo, não uma vitrine de imagens. Cada shot aqui ancora uma etapa do ecossistema em ação.</p>
+          </div>
+        </article>
+        <article class="archive-story">
+          <div class="story-media">
+            <img src="./brand/repo-manus-hackathon/didata/didata_identity_20260308.png" alt="Didata identity" />
+            <img src="./brand/repo-manus-hackathon/didata/seldon_shot_architect_20260308.png" alt="Seldon architect" />
+          </div>
+          <div class="story-copy">
+            <p class="tag">Didata archive</p>
+            <h3>Identidade, arquitetura e voz.</h3>
+            <p>O outro polo do arquivo visual entra como contraste: memória complementar, escala e textura para a landing page do hub.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -162,7 +239,7 @@
       </div>
     </section>
 
-    <section class="panel timeline">
+    <section class="panel timeline" id="chronicle">
       <div class="section-head">
         <div>
           <p class="eyebrow">Chronicle</p>
