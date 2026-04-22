@@ -63,6 +63,14 @@ The root `E:\tessy-argenta-fenix` is an operational superproject/metarepo for th
 
 For root health checks, use `git status --porcelain=v1 --ignore-submodules=dirty`. Do not treat module-local state or gitlink movement as root-level uncommitted source work. Inspect a module from inside its own repo only when the active phase targets that module.
 
+### Sync Closure Rule
+
+- Any phase that touches a module repo must close in two commits: the module repo first, then the master repo mirror second.
+- The master repo must never be used to overwrite the individual module repos.
+- Large media assets such as videos must be tracked with Git LFS or replaced before publication.
+- The phase is only considered fully published after both repos are pushed successfully.
+- If the master repo needs to absorb remote history, do it with a safe merge strategy rather than a destructive reset.
+
 ---
 
 ## Key Files

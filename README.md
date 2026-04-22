@@ -45,6 +45,7 @@ graph TD
 1. Abra [`index.html`](./index.html) no navegador.
 2. Navegue pelos ativos em [`brand/repo-manus-hackathon`](./brand/repo-manus-hackathon).
 3. Leia [`docs/auditoria_holistica_2026-04-22.md`](./docs/auditoria_holistica_2026-04-22.md).
+4. Consulte [`docs/sync-policy.md`](./docs/sync-policy.md) para a regra fixa de sincronização dupla.
 
 ## Nota
 
