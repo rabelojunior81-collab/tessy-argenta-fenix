@@ -168,12 +168,16 @@
 
 ## Traceability
 
+Phase 4 completed as an operational sync scope with no product REQ-IDs mapped to it.
+
+The Phase 4.1 traceability row below remains the owner of `TESSY-13` through `TESSY-17`.
+
 | Requirement | Phase | Status |
 |-------------|-------|--------|
 | TESSY-01 through TESSY-05 | Phase 1: Foundation | Complete |
 | TESSY-06 through TESSY-08 | Phase 2: State | Complete |
 | TESSY-09 through TESSY-12 | Phase 3: GitHub | Complete |
-| TESSY-13 through TESSY-17 | Phase 4: AI | Pending |
+| TESSY-13 through TESSY-17 | Phase 4.1: AI | Pending |
 | TESSY-18 through TESSY-20 | Phase 5: Workspace | Pending |
 | TESSY-21 through TESSY-23 | Phase 6: Polish | Pending |
 | INCP-01 through INCP-04 | Phase 7: Core Agent | Pending |
@@ -196,4 +200,4 @@
 
 ---
 *Requirements defined: 2026-04-20*
-*Last updated: 2026-04-22 after Phase 3 GitHub validation*
+*Last updated: 2026-04-23 after Phase 4 superproject sync execution and Phase 4.1 AI deferral confirmation*

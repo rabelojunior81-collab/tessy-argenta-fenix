@@ -8,7 +8,7 @@
 
 ## Phase Overview
 
-**17 phases** | **50 requirements mapped** | All v1 requirements covered ✓
+**18 phases** | **50 requirements mapped** | All v1 requirements covered ✓
 
 | # | Phase | Goal | Requirements | Success Criteria |
 |---|-------|------|--------------|------------------|
@@ -16,7 +16,8 @@
 | 1 | Tessy Foundation | Monaco editor + xterm.js terminal working together | TESSY-01 to TESSY-05 | Complete (5/5, 2026-04-21) |
 | 2 | Tessy State | Application state persists, file explorer works | TESSY-06 to TESSY-08 | Complete (3/3, 2026-04-22) |
 | 3 | Tessy GitHub | Native GitHub viewer with guided/direct actions and host-side worktree support | TESSY-09 to TESSY-12 | Complete (5/5, 2026-04-22) |
-| 4 | Tessy AI | Chat + providers + tools | TESSY-13 to TESSY-17 | 5 |
+| 4 | Superproject Sync | Configure the root metarepo and module sync workflow | Operational scope pivot (see Phase 4 context) | Complete (5/5, 2026-04-23) |
+| 4.1 | Tessy AI | Chat + providers + tools | TESSY-13 to TESSY-17 | 5 |
 | 5 | Tessy Workspace | Local filesystem + offline | TESSY-18 to TESSY-20 | 3 |
 | 6 | Tessy Polish | Errors + observability | TESSY-21 to TESSY-23 | 3 |
 | 7 | Inception Core | Agent loop + CLI | INCP-01 to INCP-04 | 4 |
@@ -119,7 +120,28 @@
 
 ---
 
-### Phase 4: Tessy AI
+### Phase 4: Superproject Sync
+
+**Goal:** Formalize `tessy-argenta-fenix` as the GitHub-backed superproject and add safe root/module sync operations without converting the modules into submodules
+
+**Requirements:** Operational scope pivot from discuss-phase context (no product REQ-IDs mapped to this phase)
+
+**Success Criteria:**
+1. Root repository has an explicit `origin` and a documented sync contract for the metarepo + L1 modules
+2. Outbound sync from root to changed module repositories is automated through an installable hook/script path
+3. Inbound sync from module repositories back to the root is available as an explicit manual workflow with clear status output
+4. Conflict or dirty-state detection blocks replication instead of attempting automatic merges
+5. Sync behavior is documented in `AGENTS.md`, `SYNC.md`, and the root `README.md`
+
+**Plans:** 4/4 complete (2026-04-23)
+1. Bootstrap root repository identity, sync contract docs, and shared config
+2. Implement automated root -> module replication with installable hook support
+3. Implement manual module -> root reconciliation and safety checks
+4. Add verification scripts, dry-run support, and operator runbooks
+
+---
+
+### Phase 4.1: Tessy AI
 
 **Goal:** Chat interface with multi-provider AI, tool execution
 
@@ -370,11 +392,11 @@
 
 ## State
 
-Current phase: 4 (Tessy AI)
+Current phase: 4.1 (Tessy AI)
 
-Phase 1, Phase 2, and Phase 3 are complete and must not be re-executed. Run `/gsd-plan-phase 4` to plan Tessy AI.
+Phase 1 through Phase 4 are complete and must not be re-executed. Phase 4 delivered the sync-scope pivot captured in `04-CONTEXT.md`; Phase 4.1 now carries the deferred Tessy AI work.
 
 ---
 
 *Roadmap created: 2026-04-20*
-*Last updated: 2026-04-22 after Phase 3 execution and transition to Phase 4*
+*Last updated: 2026-04-23 after Phase 4 superproject sync execution and verification closure*

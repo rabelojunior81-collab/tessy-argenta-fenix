@@ -1,0 +1,63 @@
+{
+  "root": {
+    "name": "tessy-argenta-fenix",
+    "expectedOrigin": "https://github.com/rabelojunior81-collab/tessy-argenta-fenix",
+    "defaultBranch": "master",
+    "healthCheck": "git status --porcelain=v1 --ignore-submodules=dirty",
+    "hook": {
+      "trackedShellPath": ".githooks/post-commit",
+      "trackedPowerShellPath": ".githooks/post-commit.ps1",
+      "installedHookPath": ".git/hooks/post-commit"
+    },
+    "commitMessages": {
+      "outboundTemplate": "sync: auto-commit from superproject ({0}) [root {1}]",
+      "importTemplate": "sync: import {0} after module reconciliation"
+    }
+  },
+  "modules": [
+    {
+      "name": "tessy",
+      "path": "tessy-antigravity-rabelus-lab",
+      "expectedRemote": "https://github.com/rabelojunior81-collab/tessy-antigravity-rabelus-lab",
+      "defaultBranch": "main",
+      "allowOutbound": true,
+      "allowInbound": true,
+      "protectedPaths": [
+        ".git/",
+        "node_modules/",
+        "dist/",
+        "build/",
+        "coverage/",
+        "playwright-report/",
+        "test-results/"
+      ]
+    },
+    {
+      "name": "inception-v2",
+      "path": "inception-v2",
+      "expectedRemote": "https://github.com/rabelojunior81-collab/inception-v2-rabelus",
+      "defaultBranch": "main",
+      "allowOutbound": true,
+      "allowInbound": true,
+      "protectedPaths": [
+        ".git/",
+        "node_modules/",
+        "dist/",
+        "coverage/"
+      ]
+    },
+    {
+      "name": "inception-tui",
+      "path": "inception-tui",
+      "expectedRemote": "https://github.com/rabelojunior81-collab/inception-method",
+      "defaultBranch": "master",
+      "allowOutbound": true,
+      "allowInbound": true,
+      "protectedPaths": [
+        ".git/",
+        "node_modules/",
+        "dist/"
+      ]
+    }
+  ]
+}

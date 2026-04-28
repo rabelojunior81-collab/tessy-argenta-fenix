@@ -2,18 +2,18 @@
 gsd_state_version: 1.0
 milestone: v1.0
 milestone_name: milestone
-current_phase: 4
+current_phase: 4.1
 current_phase_name: tessy ai
-current_plan: Not started
-status: planning
-stopped_at: Phase 3 complete, ready to plan Phase 4
-last_updated: "2026-04-22T04:33:43.9211738-03:00"
-last_activity: 2026-04-22 -- Phase 3 execution complete
+current_plan: Discussion pending
+status: ready_to_discuss
+stopped_at: Phase 4 complete; Phase 4.1 is next
+last_updated: "2026-04-23T19:45:00-03:00"
+last_activity: 2026-04-23 -- Phase 4 superproject sync executed and verified
 progress:
-  total_phases: 17
-  completed_phases: 3
-  total_plans: 13
-  completed_plans: 13
+  total_phases: 18
+  completed_phases: 4
+  total_plans: 17
+  completed_plans: 17
   percent: 100
 ---
 
@@ -21,38 +21,40 @@ progress:
 
 ## Project Reference
 
-See: `.planning/PROJECT.md` (updated 2026-04-22)
+See: `.planning/PROJECT.md` (updated 2026-04-23)
 
 Core value: Transformar uma inteligencia ecossistemica forte em operacao modular sustentavel.
-Current focus: Phase 4 - Tessy AI
+Current focus: Phase 4.1 - Tessy AI
 
 ## Current Position
 
-Current Phase: 4
+Current Phase: 4.1
 Current Phase Name: tessy ai
-Current Plan: Not started
-Total Plans in Phase: Not planned yet
-Status: Ready to plan
-Last activity: 2026-04-22
-Last Activity Description: Phase 3 complete, transitioned to Phase 4
+Current Plan: Discussion pending
+Total Plans in Phase: 0
+Status: Ready to discuss
+Last activity: 2026-04-23
+Last Activity Description: Phase 4 sync tooling, docs, installer, and verification completed; Phase 4.1 is now next
 
 Progress: [██████████] 100%
 
 ## Performance Metrics
 
-Total plans completed: 13
+Total plans completed: 17
 Average duration: n/a
-Total execution time: 0.0 hours
+Total execution time: n/a
 
 | Phase | Plans | Total | Avg/Plan |
 |-------|-------|-------|----------|
 | 1 | 5 | n/a | n/a |
 | 2 | 3 | - | - |
 | 3 | 5 | - | - |
+| 4 | 4/4 | - | - |
 
 Recent Trend: Phase 1 completed and reconciled from merged Tessy commit `8148112`.
 Phase 2 completed with Tessy commits `6b1ccd7`, `33f6a73`, and `a7515c8`.
 Phase 3 completed with native GitHub surface, persisted `YOLO`, and host-side worktree support.
+Phase 4 completed the superproject sync pivot with root `origin`, tracked hook installation, sync scripts, runbooks, and a passing local smoke harness.
 
 ## Accumulated Context
 
@@ -67,6 +69,8 @@ Phase 3 completed with native GitHub surface, persisted `YOLO`, and host-side wo
 - Restored local files are re-read only after workspace handle validation; missing files clear stale metadata and keep `/files` recoverable.
 - Terminal restore is visual transcript only; PTY connection remains manual through Connect.
 - Phase 3 turns GitHub into a native Tessy surface with OAuth primary, PAT fallback, hybrid tree/search browsing, persisted YOLO, and host-side worktree orchestration.
+- Phase 4 formalizes the root metarepo sync workflow; modules stay as real nested repositories, not submodules.
+- Tessy AI remains pending but now lives in Phase 4.1 after the scope pivot recorded in `04-CONTEXT.md`.
 
 ### Pending Todos
 
@@ -74,8 +78,8 @@ None yet.
 
 ### Blockers/Concerns
 
-- `STATE.md` had legacy body structure and broke part of the GSD state lifecycle until repaired.
-- Git write operations may still require permission escalation if `.git/index.lock` remains blocked.
+- Live module repositories currently have dirty state that the new sync status surface now reports explicitly before any live outbound run.
+- `inception-v2` currently sits on a branch without an upstream; the new toolchain surfaces that instead of guessing a push target.
 
 ## Deferred Items
 
@@ -85,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-22T04:33:43.9211738-03:00
-Stopped At: Phase 3 complete, ready to plan Phase 4
+Last session: 2026-04-23T19:45:00-03:00
+Stopped At: Phase 4 complete; Phase 4.1 ready for discuss/plan
 Resume File: None

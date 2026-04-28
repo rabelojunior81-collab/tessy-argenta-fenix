@@ -1,86 +1,125 @@
-# AGENTS.md - Exossistema Rabelus
+# AGENTS.md — Exossistema Rabelus
 
-**Project:** Exossistema Rabelus
-**Generated:** 2026-04-20
-**Updated:** 2026-04-21
+**Projeto:** Exossistema Rabelus
+**Gerado:** 2026-04-20
+**Atualizado:** 2026-04-27
+
+> Leia este arquivo **antes de qualquer ação** neste repositório.
 
 ---
 
-## GSD Workflow Reference
+## Referência de Comandos GSD
 
-### Commands
+| Comando | Propósito |
+|---------|-----------|
+| `/gsd-new-project` | Inicializar novo projeto |
+| `/gsd-discuss-phase N` | Coletar contexto para a fase N |
+| `/gsd-plan-phase N` | Criar planos para a fase N |
+| `/gsd-execute-phase N` | Executar planos da fase N |
+| `/gsd-verify-phase N` | Verificar entregas da fase N |
+| `/gsd-transition` | Transitar para a próxima fase |
+| `/gsd-progress` | Exibir progresso do projeto |
+
+### Fluxo de Fase
+
+1. **Discuss** → `/gsd-discuss-phase N`
+   - Coleta contexto de implementação
+   - Captura decisões em CONTEXT.md
+
+2. **Plan** → `/gsd-plan-phase N`
+   - Cria tarefas específicas a partir do CONTEXT.md
+   - Escreve arquivos PLAN.md
+
+3. **Execute** → `/gsd-execute-phase N`
+   - Executa planos com checkpoints
+   - Commita cada tarefa concluída
+
+4. **Verify** → `/gsd-verify-phase N`
+   - Confirma se as entregas correspondem aos requisitos
+   - Marca requisitos como completos
+
+5. **Transition** → `/gsd-transition`
+   - Move para a próxima fase
+   - Atualiza STATE.md
+
+---
+
+## Contexto do Projeto
+
+**Valor Central:** Transformar inteligência ecossistemica forte em operação modular sustentável
+
+**Módulos:**
+- Tessy (produto flagship)
+- Inception v2 (runtime de plataforma)
+- inception-tui (ferramenta de bootstrap)
+- GSD (camada operacional)
+
+**Total de Fases:** 18
+**Fase Atual:** 4.1 (Tessy AI)
+
+---
+
+## Regra de Topologia Git
+
+O root `E:\tessy-argenta-fenix` é o superproject/metarepo operacional do exossistema. Os módulos configurados em `planning.sub_repos` (`tessy-antigravity-rabelus-lab`, `inception-v2`, `inception-tui`) são repositórios L1 de primeira classe.
+
+Para health checks do root, use `git status --porcelain=v1 --ignore-submodules=dirty`. Não trate o estado local dos módulos ou movimento de gitlink como trabalho de fonte não commitado no root. Inspecione um módulo de dentro do seu próprio repo apenas quando a fase ativa tiver aquele módulo como alvo.
+
+---
+
+## Contrato de Sync do Superproject
+
+- O root permanece o repo de orquestração; os módulos mantêm seus próprios diretórios `.git/` e seus próprios remotes `origin`.
+- Não introduza `.gitmodules` ou comandos de gerenciamento de submódulos como workflow primário deste projeto.
+- O sync outbound automático vive em `scripts/sync/superproject-sync.ps1` e pode ser disparado pelo hook root `post-commit` instalado.
+- A reconciliação inbound manual vive em `scripts/sync/import-module-changes.ps1` e deve ser rodada explicitamente pelo operador.
+- Estados sujos, divergentes, sem remote ou ambíguos devem bloquear o sync. Nenhuma estratégia de merge automático é permitida.
+- Use `scripts/sync/superproject-sync-status.ps1` antes de mutar repositórios root ou de módulo quando a saúde do sync estiver incerta.
+
+---
+
+## Arquivos-Chave
+
+| Arquivo | Propósito |
+|---------|-----------|
+| `.planning/PROJECT.md` | Contexto e valor central do projeto |
+| `.planning/REQUIREMENTS.md` | Requisitos v1 com REQ-IDs |
+| `.planning/ROADMAP.md` | Breakdown de fases com critérios de sucesso |
+| `.planning/STATE.md` | Fase atual e rastreamento de progresso |
+| `.planning/research/` | Pesquisa de stack, features, arquitetura e pitfalls |
+| `SYNC.md` | Runbook operacional completo do sync |
+
+---
+
+## Prioridade Atual
+
+Continue com a Fase 4.1: Tessy AI
+- Objetivo: Chat, providers, streaming, context window e execução de ferramentas dentro do Tessy
+- Pré-requisito: Sync do superproject da Fase 4 está completo e o contrato root/módulo está estabelecido
+
+Execute `/gsd-discuss-phase 4.1` para reabrir decisões de IA ou `/gsd-plan-phase 4.1` para iniciar o planejamento executável.
+
+---
+
+---
+
+## English Reference
+
+**Project:** Exossistema Rabelus | **Current Phase:** 4.1 (Tessy AI)
+
+### GSD Commands
 
 | Command | Purpose |
 |---------|---------|
-| `/gsd-new-project` | Initialize new project |
 | `/gsd-discuss-phase N` | Gather context for phase N |
 | `/gsd-plan-phase N` | Create plans for phase N |
 | `/gsd-execute-phase N` | Execute plans for phase N |
 | `/gsd-verify-phase N` | Verify phase N deliverables |
-| `/gsd-transition` | Transition to next phase |
-| `/gsd-progress` | Show project progress |
-
-### Phase Workflow
-
-1. **Discuss** → `/gsd-discuss-phase N`
-   - Gather implementation context
-   - Capture decisions in CONTEXT.md
-
-2. **Plan** → `/gsd-plan-phase N`
-   - Create specific tasks from CONTEXT.md
-   - Write PLAN.md files
-
-3. **Execute** → `/gsd-execute-phase N`
-   - Run plans with checkpoint gates
-   - Commit each completed task
-
-4. **Verify** → `/gsd-verify-phase N`
-   - Confirm deliverables match requirements
-   - Mark requirements as complete
-
-5. **Transition** → `/gsd-transition`
-   - Move to next phase
-   - Update STATE.md
-
----
-
-## Project Context
-
-**Core Value:** Transformar inteligência ecossistemica forte em operação modular sustentável
-
-**Modules:**
-- Tessy (flagship product)
-- Inception v2 (platform runtime)
-- inception-tui (bootstrap tool)
-- GSD (operational layer)
-
-**Total Phases:** 17
-**Current Phase:** 2 (Tessy State)
 
 ### Git Topology Rule
 
-The root `E:\tessy-argenta-fenix` is an operational superproject/metarepo for the exossistema. The configured `planning.sub_repos` modules (`tessy-antigravity-rabelus-lab`, `inception-v2`, `inception-tui`) are first-class L1 module repositories.
+Root `E:\tessy-argenta-fenix` is the operational superproject. Modules (`tessy-antigravity-rabelus-lab`, `inception-v2`, `inception-tui`) are first-class L1 repositories with their own `.git/` and `origin` remotes. Root health check: `git status --porcelain=v1 --ignore-submodules=dirty`.
 
-For root health checks, use `git status --porcelain=v1 --ignore-submodules=dirty`. Do not treat module-local state or gitlink movement as root-level uncommitted source work. Inspect a module from inside its own repo only when the active phase targets that module.
+### Sync Contract
 
----
-
-## Key Files
-
-| File | Purpose |
-|-------|---------|
-| `.planning/PROJECT.md` | Project context and core value |
-| `.planning/REQUIREMENTS.md` | v1 requirements with REQ-IDs |
-| `.planning/ROADMAP.md` | Phase breakdown with success criteria |
-| `.planning/STATE.md` | Current phase and progress tracking |
-| `.planning/research/` | Stack, features, architecture, pitfalls research |
-
----
-
-## Current Priority
-
-Continue with Phase 2: Tessy State
-- Goal: Application state persists, file explorer works
-- Requirements: TESSY-06 to TESSY-08
-
-Run `/gsd-plan-phase 2` to plan the next phase.
+Outbound sync is automatic (post-commit hook → `superproject-sync.ps1`). Inbound reconciliation is always manual (`import-module-changes.ps1`). Dirty, divergent, missing-remote, or ambiguous states block sync. No automatic merge strategy allowed. Run `superproject-sync-status.ps1` before any mutation when sync health is unclear.
