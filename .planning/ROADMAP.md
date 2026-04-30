@@ -155,11 +155,12 @@
 5. Tool calls (read file, run command) sandboxed to workspace
 
 **Plans:**
-1. Build chat UI component with streaming via native Fetch/SSE
-2. Implement Provider Style Polymorphism (OpenAIStyle, AnthropicStyle, GeminiStyle, OllamaStyle) without Vercel SDK
-3. Sync and route REST API documentation into Auto Doc Engine for provider styles
-4. Implement token budget with sliding window
-5. Validate all tool paths against workspace root
+1. [ ] 04.1-01-PLAN.md — ProviderStyle interface and types (ChatContext streaming state)
+2. [ ] 04.1-02-PLAN.md — Five provider implementations (OpenAI, Anthropic, Gemini, Ollama, OpenRouter)
+3. [ ] 04.1-03-PLAN.md — ProviderSelector and TokenBudgetBar UI components
+4. [ ] 04.1-04-PLAN.md — Tool system (ToolSpec, ToolBroker, WorkspaceSandbox, built-in tools)
+5. [ ] 04.1-05-PLAN.md — Token budget and sliding window context management
+6. [ ] 04.1-06-PLAN.md — End-to-end streaming pipeline integration
 
 ---
 
