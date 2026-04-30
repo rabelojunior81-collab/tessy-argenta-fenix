@@ -4,9 +4,9 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4.1
 current_phase_name: tessy ai
-current_plan: Discussion pending
-status: ready_to_discuss
-stopped_at: Phase 4 complete; Phase 4.1 is next
+current_plan: Discussion complete
+status: ready_to_plan
+stopped_at: Phase 4.1 context gathered
 last_updated: "2026-04-23T19:45:00-03:00"
 last_activity: 2026-04-23 -- Phase 4 superproject sync executed and verified
 progress:
@@ -30,11 +30,11 @@ Current focus: Phase 4.1 - Tessy AI
 
 Current Phase: 4.1
 Current Phase Name: tessy ai
-Current Plan: Discussion pending
+Current Plan: Discussion complete
 Total Plans in Phase: 0
-Status: Ready to discuss
-Last activity: 2026-04-23
-Last Activity Description: Phase 4 sync tooling, docs, installer, and verification completed; Phase 4.1 is now next
+Status: Ready to plan
+Last activity: 2026-04-30
+Last Activity Description: Phase 4.1 context gathered and key architectural decisions mapped.
 
 Progress: [██████████] 100%
 
@@ -70,7 +70,8 @@ Phase 4 completed the superproject sync pivot with root `origin`, tracked hook i
 - Terminal restore is visual transcript only; PTY connection remains manual through Connect.
 - Phase 3 turns GitHub into a native Tessy surface with OAuth primary, PAT fallback, hybrid tree/search browsing, persisted YOLO, and host-side worktree orchestration.
 - Phase 4 formalizes the root metarepo sync workflow; modules stay as real nested repositories, not submodules.
-- Tessy AI remains pending but now lives in Phase 4.1 after the scope pivot recorded in `04-CONTEXT.md`.
+- Phase 4.1 abandona Python backend e decide orquestrar IA nativamente via Bun/TS; adota RAG dual (Ollama Local + Gemini API) e injeção de tools via interceptador Zod.
+- Os "Artefatos" na Tessy são edições reais no sistema de arquivos da IDE. O iframe isolado (Open WebUI) será usado apenas como Sandbox de Preview Seguro.
 
 ### Pending Todos
 
