@@ -155,10 +155,11 @@
 5. Tool calls (read file, run command) sandboxed to workspace
 
 **Plans:**
-1. Build chat UI component with streaming
-2. Integrate @ai-sdk/anthropic, @ai-sdk/google, ai
-3. Implement token budget with sliding window
-4. Validate all tool paths against workspace root
+1. Build chat UI component with streaming via native Fetch/SSE
+2. Implement Provider Style Polymorphism (OpenAIStyle, AnthropicStyle, GeminiStyle, OllamaStyle) without Vercel SDK
+3. Sync and route REST API documentation into Auto Doc Engine for provider styles
+4. Implement token budget with sliding window
+5. Validate all tool paths against workspace root
 
 ---
 

@@ -5,10 +5,10 @@ milestone_name: milestone
 current_phase: 4.1
 current_phase_name: tessy ai
 current_plan: Discussion complete
-status: ready_to_plan
-stopped_at: Phase 4.1 context gathered
-last_updated: "2026-04-23T19:45:00-03:00"
-last_activity: 2026-04-23 -- Phase 4 superproject sync executed and verified
+status: planning
+stopped_at: Phase 4.1 context gathered and key architectural decisions mapped
+last_updated: "2026-04-30T10:00:00-03:00"
+last_activity: 2026-04-30 -- Phase 4.1 context gathered, including Fetch/HTTP agnostic gateway decision over SDKs
 progress:
   total_phases: 18
   completed_phases: 4
@@ -32,9 +32,9 @@ Current Phase: 4.1
 Current Phase Name: tessy ai
 Current Plan: Discussion complete
 Total Plans in Phase: 0
-Status: Ready to plan
+Status: Planning
 Last activity: 2026-04-30
-Last Activity Description: Phase 4.1 context gathered and key architectural decisions mapped.
+Last Activity Description: Phase 4.1 context gathered, including Fetch/HTTP agnostic gateway decision over SDKs.
 
 Progress: [██████████] 100%
 
@@ -72,6 +72,7 @@ Phase 4 completed the superproject sync pivot with root `origin`, tracked hook i
 - Phase 4 formalizes the root metarepo sync workflow; modules stay as real nested repositories, not submodules.
 - Phase 4.1 abandona Python backend e decide orquestrar IA nativamente via Bun/TS; adota RAG dual (Ollama Local + Gemini API) e injeção de tools via interceptador Zod.
 - Os "Artefatos" na Tessy são edições reais no sistema de arquivos da IDE. O iframe isolado (Open WebUI) será usado apenas como Sandbox de Preview Seguro.
+- Roteamento de IA na Fase 4.1 abandona dependência do Vercel SDK em prol de classes polimórficas Fetch puras, usando o Auto Doc Engine da Tessy como base de conhecimento REST.
 
 ### Pending Todos
 
