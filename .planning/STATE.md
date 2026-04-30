@@ -4,17 +4,17 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4.1
 current_phase_name: tessy ai
-current_plan: Discussion complete
-status: planning
-stopped_at: Phase 4.1 context gathered and key architectural decisions mapped
-last_updated: "2026-04-30T10:00:00-03:00"
-last_activity: 2026-04-30 -- Phase 4.1 context gathered, including Fetch/HTTP agnostic gateway decision over SDKs
+current_plan: "04.1-02 complete"
+status: executing
+stopped_at: Plan 04.1-02 complete — Five provider implementations done
+last_updated: "2026-04-30T21:42:00Z"
+last_activity: 2026-04-30 -- Phase 4.1 Plan 04.1-02 executing
 progress:
   total_phases: 18
   completed_phases: 4
-  total_plans: 17
-  completed_plans: 17
-  percent: 100
+  total_plans: 24
+  completed_plans: 19
+  percent: 75
 ---
 
 # Project State
@@ -31,10 +31,10 @@ Current focus: Phase 4.1 - Tessy AI
 Current Phase: 4.1
 Current Phase Name: tessy ai
 Current Plan: Discussion complete
-Total Plans in Phase: 0
-Status: Planning
-Last activity: 2026-04-30
-Last Activity Description: Phase 4.1 context gathered, including Fetch/HTTP agnostic gateway decision over SDKs.
+Total Plans in Phase: 6
+Status: Ready to execute
+Last activity: 2026-04-30 -- Phase 4.1 planning complete
+Last Activity Description: Phase 4.1 planning complete — 6 plans ready
 
 Progress: [██████████] 100%
 
@@ -73,6 +73,7 @@ Phase 4 completed the superproject sync pivot with root `origin`, tracked hook i
 - Phase 4.1 abandona Python backend e decide orquestrar IA nativamente via Bun/TS; adota RAG dual (Ollama Local + Gemini API) e injeção de tools via interceptador Zod.
 - Os "Artefatos" na Tessy são edições reais no sistema de arquivos da IDE. O iframe isolado (Open WebUI) será usado apenas como Sandbox de Preview Seguro.
 - Roteamento de IA na Fase 4.1 abandona dependência do Vercel SDK em prol de classes polimórficas Fetch puras, usando o Auto Doc Engine da Tessy como base de conhecimento REST.
+- Validação de clone Tessy (2026-04-30): npm install OK, audit fix reduziu 17→6 vulnerabilidades sem breaking changes, concurrently reconhecido pós-install, estado persiste corretamente.
 
 ### Pending Todos
 
@@ -91,6 +92,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-23T19:45:00-03:00
-Stopped At: Phase 4 complete; Phase 4.1 ready for discuss/plan
-Resume File: None
+Last session: 2026-04-30T18:08:48-03:00
+Stopped At: Clone validated; Phase 4.1 ready to execute
+Resume File: .planning/reports/2026-04-30-clone-validation.md
