@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4.1
 current_phase_name: tessy ai
-current_plan: "04.1-06 complete"
+current_plan: "04.1-07 complete"
 status: executing
-stopped_at: Plan 04.1-06 complete — End-to-end streaming pipeline done
-last_updated: "2026-04-30T22:03:53.310Z"
-last_activity: 2026-04-30 -- Phase 4.1 planning complete
+stopped_at: Plan 04.1-07 complete — API Keys UI + Sandbox Toggle gap closure done
+last_updated: "2026-04-30T21:04:34Z"
+last_activity: 2026-04-30 -- Phase 4.1 Plan 04.1-07 complete
 progress:
   total_phases: 18
   completed_phases: 5
-  total_plans: 24
-  completed_plans: 24
+  total_plans: 7
+  completed_plans: 7
   percent: 100
 ---
 
@@ -30,17 +30,17 @@ Current focus: Phase 4.1 - Tessy AI
 
 Current Phase: 4.1
 Current Phase Name: tessy ai
-Current Plan: "04.1-06 complete"
-Total Plans in Phase: 6
+Current Plan: "04.1-07 complete"
+Total Plans in Phase: 7
 Status: Completed
-Last activity: 2026-04-30 -- Phase 4.1 Plan 04.1-06 complete
-Last Activity Description: Phase 4.1 Plan 04.1-06 complete — End-to-end streaming pipeline done
+Last activity: 2026-04-30 -- Phase 4.1 Plan 04.1-07 complete
+Last Activity Description: Phase 4.1 Plan 04.1-07 complete — API Keys UI + Sandbox Toggle gap closure done
 
 Progress: [██████████] 100%
 
 ## Performance Metrics
 
-Total plans completed: 17
+Total plans completed: 18
 Average duration: n/a
 Total execution time: n/a
 
@@ -74,6 +74,7 @@ Phase 4 completed the superproject sync pivot with root `origin`, tracked hook i
 - Os "Artefatos" na Tessy são edições reais no sistema de arquivos da IDE. O iframe isolado (Open WebUI) será usado apenas como Sandbox de Preview Seguro.
 - Roteamento de IA na Fase 4.1 abandona dependência do Vercel SDK em prol de classes polimórficas Fetch puras, usando o Auto Doc Engine da Tessy como base de conhecimento REST.
 - Validação de clone Tessy (2026-04-30): npm install OK, audit fix reduziu 17→6 vulnerabilidades sem breaking changes, concurrently reconhecido pós-install, estado persiste corretamente.
+- Plan 04.1-07 (Gap Closure): ControllersModal agora tem seções "Provedores e chaves" (5 provedores com validação) e "Sandbox e tools" (toggle ON/OFF persistido). AuthProviders estendido com Anthropic e Ollama.
 
 ### Pending Todos
 
@@ -92,6 +93,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-30T18:08:48-03:00
-Stopped At: Clone validated; Phase 4.1 ready to execute
-Resume File: .planning/reports/2026-04-30-clone-validation.md
+Last session: 2026-04-30T21:04:34-03:00
+Stopped At: Plan 04.1-07 complete — API Keys UI + Sandbox Toggle gap closure done
+Resume File: .planning/phases/04.1-tessy-ai/04.1-07-SUMMARY.md
