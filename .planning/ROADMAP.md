@@ -155,12 +155,10 @@
 5. Tool calls (read file, run command) sandboxed to workspace
 
 **Plans:**
-1. [x] 04.1-01-PLAN.md — ProviderStyle interface and types (ChatContext streaming state)
-2. [x] 04.1-02-PLAN.md — Five provider implementations (OpenAI, Anthropic, Gemini, Ollama, OpenRouter)
-3. [ ] 04.1-03-PLAN.md — ProviderSelector and TokenBudgetBar UI components
-4. [x] 04.1-04-PLAN.md — Tool system (ToolSpec, ToolBroker, WorkspaceSandbox, built-in tools)
-5. [ ] 04.1-05-PLAN.md — Token budget and sliding window context management
-6. [ ] 04.1-06-PLAN.md — End-to-end streaming pipeline integration
+1. Build chat UI component with streaming
+2. Integrate @ai-sdk/anthropic, @ai-sdk/google, ai
+3. Implement token budget with sliding window
+4. Validate all tool paths against workspace root
 
 ---
 

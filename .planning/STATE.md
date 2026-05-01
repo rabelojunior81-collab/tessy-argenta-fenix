@@ -4,16 +4,16 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4.1
 current_phase_name: tessy ai
-current_plan: "04.1-07 complete"
-status: executing
-stopped_at: Plan 04.1-07 complete — API Keys UI + Sandbox Toggle gap closure done
-last_updated: "2026-04-30T21:04:34Z"
-last_activity: 2026-04-30 -- Phase 4.1 Plan 04.1-07 complete
+current_plan: Discussion pending
+status: ready_to_discuss
+stopped_at: Phase 4 complete; Phase 4.1 is next
+last_updated: "2026-04-23T19:45:00-03:00"
+last_activity: 2026-04-23 -- Phase 4 superproject sync executed and verified
 progress:
   total_phases: 18
-  completed_phases: 5
-  total_plans: 7
-  completed_plans: 7
+  completed_phases: 4
+  total_plans: 17
+  completed_plans: 17
   percent: 100
 ---
 
@@ -30,17 +30,17 @@ Current focus: Phase 4.1 - Tessy AI
 
 Current Phase: 4.1
 Current Phase Name: tessy ai
-Current Plan: "04.1-07 complete"
-Total Plans in Phase: 7
-Status: Completed
-Last activity: 2026-04-30 -- Phase 4.1 Plan 04.1-07 complete
-Last Activity Description: Phase 4.1 Plan 04.1-07 complete — API Keys UI + Sandbox Toggle gap closure done
+Current Plan: Discussion pending
+Total Plans in Phase: 0
+Status: Ready to discuss
+Last activity: 2026-04-23
+Last Activity Description: Phase 4 sync tooling, docs, installer, and verification completed; Phase 4.1 is now next
 
 Progress: [██████████] 100%
 
 ## Performance Metrics
 
-Total plans completed: 18
+Total plans completed: 17
 Average duration: n/a
 Total execution time: n/a
 
@@ -70,11 +70,7 @@ Phase 4 completed the superproject sync pivot with root `origin`, tracked hook i
 - Terminal restore is visual transcript only; PTY connection remains manual through Connect.
 - Phase 3 turns GitHub into a native Tessy surface with OAuth primary, PAT fallback, hybrid tree/search browsing, persisted YOLO, and host-side worktree orchestration.
 - Phase 4 formalizes the root metarepo sync workflow; modules stay as real nested repositories, not submodules.
-- Phase 4.1 abandona Python backend e decide orquestrar IA nativamente via Bun/TS; adota RAG dual (Ollama Local + Gemini API) e injeção de tools via interceptador Zod.
-- Os "Artefatos" na Tessy são edições reais no sistema de arquivos da IDE. O iframe isolado (Open WebUI) será usado apenas como Sandbox de Preview Seguro.
-- Roteamento de IA na Fase 4.1 abandona dependência do Vercel SDK em prol de classes polimórficas Fetch puras, usando o Auto Doc Engine da Tessy como base de conhecimento REST.
-- Validação de clone Tessy (2026-04-30): npm install OK, audit fix reduziu 17→6 vulnerabilidades sem breaking changes, concurrently reconhecido pós-install, estado persiste corretamente.
-- Plan 04.1-07 (Gap Closure): ControllersModal agora tem seções "Provedores e chaves" (5 provedores com validação) e "Sandbox e tools" (toggle ON/OFF persistido). AuthProviders estendido com Anthropic e Ollama.
+- Tessy AI remains pending but now lives in Phase 4.1 after the scope pivot recorded in `04-CONTEXT.md`.
 
 ### Pending Todos
 
@@ -93,6 +89,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-30T21:04:34-03:00
-Stopped At: Plan 04.1-07 complete — API Keys UI + Sandbox Toggle gap closure done
-Resume File: .planning/phases/04.1-tessy-ai/04.1-07-SUMMARY.md
+Last session: 2026-04-23T19:45:00-03:00
+Stopped At: Phase 4 complete; Phase 4.1 ready for discuss/plan
+Resume File: None
