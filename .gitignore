@@ -3,3 +3,4 @@
 .planning/*.tmp.*
 .tmp/sync-harness*/
 .tmp/superproject-sync/
+research-repos/
