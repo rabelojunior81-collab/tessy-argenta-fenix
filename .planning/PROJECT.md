@@ -68,7 +68,7 @@ Transformar uma inteligência ecossistemica forte em operação modular sustent�
 ### Current State
 
 - Phase 4 completed the root/module sync contract with tracked docs, scripts, verification, and a real root `origin`.
-- The next execution target is Phase 4.1 (Tessy AI), now on top of an explicit superproject workflow instead of implicit Git topology debt.
+- Phase 4.1 was executed in the Tessy module, then fully rolled back and archived on 2026-04-30; any new attempt must re-open discuss-phase first.
 
 ## Constraints
 
@@ -88,6 +88,7 @@ Transformar uma inteligência ecossistemica forte em operação modular sustent�
 | Subrepos L1 tratados como módulos do exossistema | O estado local de um módulo não deve ser confundido com sujeira do root | — Accepted 2026-04-21 |
 | Tessy GitHub entrou como superfície nativa com viewer híbrido, YOLO persistido e worktree host-side | Phase 3 consolidou o fluxo GitHub dentro do shell | — Accepted 2026-04-22 |
 | Sync do superproject formalizado com root origin, hook rastreado, outbound automático e inbound manual | Phase 4 resolveu o contrato operacional do root antes da fase de IA | — Accepted 2026-04-23 |
+| Fase 4.1 executada, revertida e arquivada | Mantém o histórico fiel e evita reexecução cega | — Accepted 2026-04-30 |
 
 ## Evolution
 
@@ -107,4 +108,4 @@ Este documento evolve at phase transitions e milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-04-23 after Phase 4 superproject sync completion and verification*
+*Last updated: 2026-04-30 after Phase 4.1 rollback, root resync, and archive closure*

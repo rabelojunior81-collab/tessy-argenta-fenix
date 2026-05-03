@@ -84,7 +84,7 @@ function Get-InstalledHookContent {
 
     @"
 #!/bin/sh
-exec "$TrackedHookPath" "\$@"
+exec "$TrackedHookPath" "$@"
 "@.TrimStart()
 }
 

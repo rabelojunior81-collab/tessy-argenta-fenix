@@ -392,11 +392,11 @@
 
 ## State
 
-Current phase: 4.1 (Tessy AI)
+Current phase: 4.1 (Tessy AI, rollback archived)
 
-Phase 1 through Phase 4 are complete and must not be re-executed. Phase 4 delivered the sync-scope pivot captured in `04-CONTEXT.md`; Phase 4.1 now carries the deferred Tessy AI work.
+Phase 1 through Phase 4 are complete and must not be re-executed. Phase 4 delivered the sync-scope pivot captured in `04-CONTEXT.md`; Phase 4.1 was executed in the module, then rolled back on 2026-04-30 and preserved in `.planning/reports/post-mortem-phase-04.1/` for re-discussion.
 
 ---
 
 *Roadmap created: 2026-04-20*
-*Last updated: 2026-04-23 after Phase 4 superproject sync execution and verification closure*
+*Last updated: 2026-04-30 after Phase 4.1 rollback and archive closure*

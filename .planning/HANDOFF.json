@@ -1,0 +1,107 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-05-02T21:59:56.4757687-03:00",
+  "context": "default",
+  "phase": "4.1",
+  "phase_name": "Tessy AI (rollback archived)",
+  "phase_dir": ".planning/reports/post-mortem-phase-04.1",
+  "plan": 0,
+  "task": 3,
+  "total_tasks": 4,
+  "status": "paused",
+  "completed_tasks": [
+    {
+      "id": 1,
+      "name": "Rollback root phase 4.1 docs",
+      "status": "done",
+      "commit": "b65e951"
+    },
+    {
+      "id": 2,
+      "name": "Rollback Tessy module execution and resync gitlink",
+      "status": "done",
+      "commit": "d7a839b / f670542"
+    },
+    {
+      "id": 3,
+      "name": "Fix post-commit hook installer and local shim",
+      "status": "done",
+      "commit": "working tree"
+    },
+    {
+      "id": 4,
+      "name": "Archive the rollback record and update canonical docs",
+      "status": "done",
+      "commit": "working tree"
+    }
+  ],
+  "remaining_tasks": [
+    {
+      "id": 5,
+      "name": "Commit root WIP snapshot",
+      "status": "not_started"
+    },
+    {
+      "id": 6,
+      "name": "Commit inception-v2 WIP snapshot",
+      "status": "not_started"
+    },
+    {
+      "id": 7,
+      "name": "Commit inception-tui WIP snapshot",
+      "status": "not_started"
+    },
+    {
+      "id": 8,
+      "name": "Verify module gitlinks after sync",
+      "status": "not_started"
+    }
+  ],
+  "blockers": [
+    {
+      "description": "Root-only rollback was insufficient because the phase execution lived in the Tessy module.",
+      "type": "technical",
+      "workaround": "Inspect the module repo directly before reverting or syncing the superproject gitlink."
+    },
+    {
+      "description": "The installed post-commit shim escaped the tracked hook arguments literally as \"$@\".",
+      "type": "technical",
+      "workaround": "Regenerate .git/hooks/post-commit from scripts/sync/install-superproject-sync.ps1 after hook edits."
+    }
+  ],
+  "human_actions_pending": [],
+  "decisions": [
+    {
+      "decision": "Preserve the full rollback in .planning/reports/post-mortem-phase-04.1/",
+      "rationale": "Keeps the failure history and recovery path explicit for future resumes.",
+      "phase": "4.1"
+    },
+    {
+      "decision": "Treat the root as orchestration and the modules as first-class repos",
+      "rationale": "Prevents repeating root-only rollback mistakes and keeps the sync model honest.",
+      "phase": "4.1"
+    },
+    {
+      "decision": "Fix the tracked hook and the installed shim together",
+      "rationale": "Avoids stale .git/hooks/post-commit behavior after hook changes.",
+      "phase": "4.1"
+    }
+  ],
+  "uncommitted_files": [
+    ".planning/PROJECT.md",
+    ".planning/ROADMAP.md",
+    ".planning/STATE.md",
+    "AGENTS.md",
+    "README.md",
+    "SYNC.md",
+    "scripts/sync/install-superproject-sync.ps1",
+    ".planning/reports/post-mortem-phase-04.1/04.1-POST-MORTEM.md",
+    ".planning/reports/post-mortem-phase-04.1/HOTFIX-04.1.md",
+    ".planning/reports/post-mortem-phase-04.1/INDEX.md",
+    "inception-v2/.claude/settings.local.json",
+    "inception-v2/_gov/",
+    "inception-tui/MISSION_BRIEFING.md"
+  ],
+  "next_action": "Run /gsd-resume-work, then review root and module status before continuing with any further sync or cleanup.",
+  "context_notes": "Phase 4.1 was executed in the Tessy module, then fully rolled back and archived. The live workspace now contains root canonical docs plus module-local WIP snapshots that still need to be committed and reconciled."
+}

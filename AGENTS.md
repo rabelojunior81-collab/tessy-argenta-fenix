@@ -2,7 +2,7 @@
 
 **Projeto:** Exossistema Rabelus
 **Gerado:** 2026-04-20
-**Atualizado:** 2026-04-27
+**Atualizado:** 2026-04-30
 
 > Leia este arquivo **antes de qualquer ação** neste repositório.
 
@@ -55,7 +55,7 @@
 - GSD (camada operacional)
 
 **Total de Fases:** 18
-**Fase Atual:** 4.1 (Tessy AI)
+**Fase Atual:** 4.1 (Tessy AI, rollback arquivado)
 
 ---
 
@@ -93,11 +93,11 @@ Para health checks do root, use `git status --porcelain=v1 --ignore-submodules=d
 
 ## Prioridade Atual
 
-Continue com a Fase 4.1: Tessy AI
+A Fase 4.1 foi executada, revertida e arquivada em `.planning/reports/post-mortem-phase-04.1/`.
 - Objetivo: Chat, providers, streaming, context window e execução de ferramentas dentro do Tessy
-- Pré-requisito: Sync do superproject da Fase 4 está completo e o contrato root/módulo está estabelecido
+- Pré-requisito: revisar a arqueologia da fase e reabrir `/gsd-discuss-phase 4.1` antes de qualquer nova execução
 
-Execute `/gsd-discuss-phase 4.1` para reabrir decisões de IA ou `/gsd-plan-phase 4.1` para iniciar o planejamento executável.
+Execute `/gsd-discuss-phase 4.1` para reabrir decisões de IA ou `/gsd-plan-phase 4.1` somente depois da nova discussão.
 
 ---
 
@@ -105,7 +105,7 @@ Execute `/gsd-discuss-phase 4.1` para reabrir decisões de IA ou `/gsd-plan-phas
 
 ## English Reference
 
-**Project:** Exossistema Rabelus | **Current Phase:** 4.1 (Tessy AI)
+**Project:** Exossistema Rabelus | **Current Phase:** 4.1 (Tessy AI, rollback arquivado)
 
 ### GSD Commands
 

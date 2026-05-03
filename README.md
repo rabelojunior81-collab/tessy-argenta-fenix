@@ -2,7 +2,7 @@
 
 > **Hub master de um ecossistema modular de desenvolvimento assistido por IA.**
 
-![Status](https://img.shields.io/badge/status-fase%204.1%20(Tessy%20AI)-blue)
+![Status](https://img.shields.io/badge/status-fase%204.1%20(revertida%20e%20arquivada)-blue)
 ![Branch](https://img.shields.io/badge/branch-main-brightgreen)
 ![Fases](https://img.shields.io/badge/fases-4%2F18%20completas-yellow)
 ![Licença](https://img.shields.io/badge/licença-MIT-green)
@@ -127,7 +127,7 @@ Consulte [`SYNC.md`](SYNC.md) para o runbook completo de operação.
 | 2 | Tessy State | ✅ Completa (2026-04-22) |
 | 3 | Tessy GitHub | ✅ Completa (2026-04-22) |
 | 4 | Superproject Sync | ✅ Completa (2026-04-23) |
-| **4.1** | **Tessy AI** | **🔄 Próxima** |
+| **4.1** | **Tessy AI** | **🔁 Revertida e arquivada (2026-04-30)** |
 | 5–16 | ... | ⏳ Pendente |
 
 ---
@@ -173,4 +173,4 @@ Full operator runbook: [`SYNC.md`](SYNC.md)
 
 ---
 
-*Criado: 2026-04-20 · Atualizado: 2026-04-27 · Fase atual: 4.1 (Tessy AI)*
+*Criado: 2026-04-20 · Atualizado: 2026-04-30 · Fase atual: 4.1 (rollback arquivado)*

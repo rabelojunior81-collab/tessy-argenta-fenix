@@ -205,6 +205,10 @@ Fontes de hook rastreadas ficam aqui:
 
 O installer escreve um delegador thin para `.git/hooks/post-commit`.
 
+> Nota de 2026-04-30: o delegador e o installer foram corrigidos para encaminhar `"$@"` corretamente ao `post-commit.ps1`. A versão anterior escapava o argumento literalmente e quebrava o hook no PowerShell.
+>
+> Se o hook já estava instalado antes desse fix, rode o installer novamente para regenerar `.git/hooks/post-commit` com o shim correto.
+
 ### Bypass
 
 Defina `SUPERPROJECT_SYNC_BYPASS=1` antes do commit quando quiser pular deliberadamente a execução automática outbound.

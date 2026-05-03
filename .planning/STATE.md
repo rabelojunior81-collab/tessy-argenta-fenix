@@ -4,11 +4,11 @@ milestone: v1.0
 milestone_name: milestone
 current_phase: 4.1
 current_phase_name: tessy ai
-current_plan: Discussion pending
+current_plan: Re-discuss pending after rollback
 status: ready_to_discuss
-stopped_at: Phase 4 complete; Phase 4.1 is next
-last_updated: "2026-04-23T19:45:00-03:00"
-last_activity: 2026-04-23 -- Phase 4 superproject sync executed and verified
+stopped_at: Phase 4.1 executed, reverted, and archived
+last_updated: "2026-04-30T21:30:00-03:00"
+last_activity: 2026-04-30 -- Phase 4.1 execution reverted in module, root pointer resynced, hook fixed
 progress:
   total_phases: 18
   completed_phases: 4
@@ -21,20 +21,20 @@ progress:
 
 ## Project Reference
 
-See: `.planning/PROJECT.md` (updated 2026-04-23)
+See: `.planning/PROJECT.md` (updated 2026-04-30)
 
 Core value: Transformar uma inteligencia ecossistemica forte em operacao modular sustentavel.
-Current focus: Phase 4.1 - Tessy AI
+Current focus: Phase 4.1 - Tessy AI (rollback archived, re-discuss pending)
 
 ## Current Position
 
 Current Phase: 4.1
 Current Phase Name: tessy ai
-Current Plan: Discussion pending
+Current Plan: Re-discuss pending after rollback
 Total Plans in Phase: 0
 Status: Ready to discuss
-Last activity: 2026-04-23
-Last Activity Description: Phase 4 sync tooling, docs, installer, and verification completed; Phase 4.1 is now next
+Last activity: 2026-04-30
+Last Activity Description: Phase 4.1 execution was reverted in the module, the superproject pointer was resynced, and the post-commit hook was corrected
 
 Progress: [██████████] 100%
 
@@ -70,7 +70,7 @@ Phase 4 completed the superproject sync pivot with root `origin`, tracked hook i
 - Terminal restore is visual transcript only; PTY connection remains manual through Connect.
 - Phase 3 turns GitHub into a native Tessy surface with OAuth primary, PAT fallback, hybrid tree/search browsing, persisted YOLO, and host-side worktree orchestration.
 - Phase 4 formalizes the root metarepo sync workflow; modules stay as real nested repositories, not submodules.
-- Tessy AI remains pending but now lives in Phase 4.1 after the scope pivot recorded in `04-CONTEXT.md`.
+- Tessy AI remains the next discussion target, but the executed phase was rolled back and archived in `.planning/reports/post-mortem-phase-04.1/`.
 
 ### Pending Todos
 
@@ -78,8 +78,7 @@ None yet.
 
 ### Blockers/Concerns
 
-- Live module repositories currently have dirty state that the new sync status surface now reports explicitly before any live outbound run.
-- `inception-v2` currently sits on a branch without an upstream; the new toolchain surfaces that instead of guessing a push target.
+- None.
 
 ## Deferred Items
 
@@ -89,6 +88,6 @@ None yet.
 
 ## Session Continuity
 
-Last session: 2026-04-23T19:45:00-03:00
-Stopped At: Phase 4 complete; Phase 4.1 ready for discuss/plan
-Resume File: None
+Last session: 2026-04-30T21:30:00-03:00
+Stopped At: Phase 4.1 executed, reverted, and archived; ready to re-discuss
+Resume File: .planning/reports/post-mortem-phase-04.1/INDEX.md
